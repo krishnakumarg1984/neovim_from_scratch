@@ -15,7 +15,7 @@ vim.cmd [[set breakindentopt=shift:2,sbr]]
 -- vim.cmd [[set iskeyword+=-]]
 
 vim.cmd [[set formatoptions-=t]]
-vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
+vim.cmd [[set formatoptions-=cro]]  -- TODO: this doesn't seem to work
 
 -- shortmess settings (((
 vim.opt.shortmess:append "I"  -- Don't give the intro message when starting Vim |:intro|.
@@ -26,9 +26,9 @@ vim.opt.shortmess:append "c"  -- Don't give |ins-completion-menu| messages.  For
 vim.opt.virtualedit:append "block"  -- Allow movement beyond buffer text only in visual block mode
 
 local options = {
-    -- conceallevel = 0,        -- so that `` is visible in markdown files
-    -- showmode = false,        -- we don't need to see things like -- INSERT -- anymore
-    -- termguicolors = true,    -- set term gui colors (most terminals support this)
+    -- conceallevel = 0,      -- so that `` is visible in markdown files
+    -- showmode = false,      -- we don't need to see things like -- INSERT -- anymore
+    -- termguicolors = true,  -- set term gui colors (most terminals support this)
 
     -- Case sensitivity options (((
     ignorecase = true,  -- ignore case in search patterns
@@ -53,9 +53,9 @@ local options = {
 
     -- Indent wrapped lines (((
     wrap = true,
-    linebreak = true,   -- Wrap lines at convenient point (only affects the on-screen display, not actual content in file) -- Break lines at word boundaries
+    linebreak = true,    -- Wrap lines at convenient point (only affects the on-screen display, not actual content in file) -- Break lines at word boundaries
     -- showbreak=…,
-    breakindent = true, -- Every wrapped line will continue visually indented (same amount of space as the beginning of that line), thus preserving horizontal blocks of text.
+    breakindent = true,  -- Every wrapped line will continue visually indented (same amount of space as the beginning of that line), thus preserving horizontal blocks of text.
     -- )))
 
     -- )))
@@ -67,15 +67,15 @@ local options = {
     -- )))
 
     -- cursorline settings (((
-    cursorline = true,    -- highlight the current line
+    cursorline = true,  -- highlight the current line
     cursorlineopt = "number",
     -- )))
 
     -- Scroll-related settings (scrolljump, sidescroll) (((
-    scrolloff = 2,        -- Minimal number of screen lines to keep above and below the cursor
-    sidescrolloff = 8,    -- The minimal number of screen columns to keep to the left and to the right of the cursor
-    -- scrolljump = 3,    -- How many lines to scroll at a time, make scrolling appears faster (i.e. when you move the cursor close to the vertical limits of display, how many more lines to reveal ?)
-    -- sidescroll = 3,    -- The minimal number of columns to scroll horizontally
+    scrolloff = 2,      -- Minimal number of screen lines to keep above and below the cursor
+    sidescrolloff = 8,  -- The minimal number of screen columns to keep to the left and to the right of the cursor
+    -- scrolljump = 3,  -- How many lines to scroll at a time, make scrolling appears faster (i.e. when you move the cursor close to the vertical limits of display, how many more lines to reveal ?)
+    -- sidescroll = 3,  -- The minimal number of columns to scroll horizontally
     -- )))
 
     -- gutter (number and signcolumn) settings (((
