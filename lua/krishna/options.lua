@@ -71,21 +71,21 @@ vim.opt.signcolumn = "yes"      -- always show the sign column, otherwise it wou
 
 -- )))
 
+-- vim.opt.conceallevel = 0         -- so that `` is visible in markdown files
+-- vim.opt.showmode = false         -- we don't need to see things like -- INSERT -- anymore
+-- vim.opt.termguicolors = true     -- set term gui colors (most terminals support this)
 vim.opt.clipboard = "unnamedplus"   -- allows neovim to access the system clipboard
 vim.opt.cmdheight = 2               -- more space in the neovim command line for displaying messages. Height of command-line (easy-readable). Better display for messages.
 vim.opt.completeopt = { "menuone",  "noselect" } -- mostly just for cmp
--- vim.opt.conceallevel = 0            -- so that `` is visible in markdown files
 vim.opt.fileencoding = "utf-8"      -- the encoding written to a file
+vim.opt.guifont = "monospace:h17"   -- the font used in graphical neovim applications
 vim.opt.mouse = "a"                 -- allow the mouse to be used in neovim (in all modes)
 vim.opt.pumheight = 10              -- pop up menu height.Maximum number of items to show in the popup menu (|ins-completion-menu|). Zero means "use available screen space". Default is 0.
--- vim.opt.showmode = false         -- we don't need to see things like -- INSERT -- anymore
 vim.opt.showtabline = 2             -- always show tabs
 vim.opt.splitbelow = true           -- force all horizontal splits to go below current window
 vim.opt.splitright = true           -- force all vertical splits to go to the right of current window
--- vim.opt.termguicolors = true        -- set term gui colors (most terminals support this)
 vim.opt.timeoutlen = 500            -- time to wait for a mapped sequence to complete (in milliseconds)
 vim.opt.undofile = true             -- enable persistent undo
-vim.opt.guifont = "monospace:h17"   -- the font used in graphical neovim applications
 vim.opt.virtualedit:append "block"  -- Allow movement beyond buffer text only in visual block mode
 
 vim.cmd [[set iskeyword+=-]]
