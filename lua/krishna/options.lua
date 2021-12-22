@@ -88,6 +88,6 @@ vim.opt.timeoutlen = 500            -- time to wait for a mapped sequence to com
 vim.opt.undofile = true             -- enable persistent undo
 vim.opt.virtualedit:append "block"  -- Allow movement beyond buffer text only in visual block mode
 
-vim.cmd [[set iskeyword+=-]]
+-- vim.cmd [[set iskeyword+=-]]
 vim.cmd [[set formatoptions-=t]]
 vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
