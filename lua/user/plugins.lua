@@ -56,10 +56,12 @@ packer.init {
 
 -- )))
 
--- Install your plugins here
+-- 'packer.startup' lua function to load plugins
 return packer.startup(function(use)
 
     -- My plugins here (((
+
+    -- Barebones/package management and other infrastructure plugins (((
 
     use "wbthomason/packer.nvim"  -- Have packer manage itself
     use "nvim-lua/plenary.nvim"   -- Useful lua functions used by lots of plugins
@@ -69,9 +71,11 @@ return packer.startup(function(use)
 
     -- Automatically set up your configuration after cloning packer.nvim (((
     -- Put this at the end after all plugins
+
     if PACKER_BOOTSTRAP then
         require("packer").sync()
     end
+
     -- )))
 
 end)
