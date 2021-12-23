@@ -28,7 +28,6 @@ vim.opt.virtualedit:append "block"  -- Allow movement beyond buffer text only in
 local options = {
     -- conceallevel = 0,      -- so that `` is visible in markdown files
     -- showmode = false,      -- we don't need to see things like -- INSERT -- anymore
-    -- termguicolors = true,  -- set term gui colors (most terminals support this)
 
     -- Case sensitivity options (((
     ignorecase = true,  -- ignore case in search patterns
@@ -87,7 +86,7 @@ local options = {
 
     clipboard = "unnamedplus",   -- allows neovim to access the system clipboard
     cmdheight = 2,               -- more space in the neovim command line for displaying messages. Height of command-line (easy-readable). Better display for messages.
-    completeopt = { "menuone",  "noselect" }, -- mostly just for cmp
+    completeopt = { "menuone",  "noselect" },  -- mostly just for cmp
     fileencoding = "utf-8",      -- the encoding written to a file
     guifont = "monospace:h17",   -- the font used in graphical neovim applications
     mouse = "a",                 -- allow the mouse to be used in neovim (in all modes)
@@ -95,6 +94,7 @@ local options = {
     showtabline = 2,             -- always show tabs
     splitbelow = true,           -- force all horizontal splits to go below current window
     splitright = true,           -- force all vertical splits to go to the right of current window
+    termguicolors = true,        -- set term gui colors (most terminals support this)
     timeoutlen = 500,            -- time to wait for a mapped sequence to complete (in milliseconds)
     undofile = true,             -- enable persistent undo
 
