@@ -1,13 +1,23 @@
--- vim: foldmarker=(((,))):foldmethod=marker:foldlevel=0
+-- vim: foldmarker=(((,))):foldmethod=marker:foldlevel=0:shiftwidth=2:softtabstop=2:tabstop=2
+
+-- Declare local variables (options and shortened names) (((
 
 local opts_noremapsilent = { noremap = true, silent = true }
 local opts_remapsilent = { noremap = false, silent = true }
 local term_opts = { noremap = true, silent = true }
-local keymap = vim.api.nvim_set_keymap  -- Shorten function name
+local keymap = vim.api.nvim_set_keymap -- Shorten function name
 
--- keymap("", "<Space>", "<Nop>", opts_noremapsilent)  -- Remap space as leader key 
+-- )))
+
+-- Comments and notes (((
+
+-- Commented-out settings (((
+
+-- keymap("", "<Space>", "<Nop>", opts_noremapsilent)  -- Remap space as leader key
 -- vim.g.mapleader = " "
 -- vim.g.maplocalleader = " "
+
+-- )))
 
 -- Modes (help/explanatory text): (((
 --   normal_mode = "n",
@@ -16,6 +26,8 @@ local keymap = vim.api.nvim_set_keymap  -- Shorten function name
 --   visual_block_mode = "x",
 --   term_mode = "t",
 --   command_mode = "c",
+-- )))
+
 -- )))
 
 -- Move across wrapped lines like regular lines (((
@@ -57,7 +69,7 @@ keymap("n", "zf", "zMzvzz", opts_noremapsilent)
 keymap("n", "<Space>", "za", opts_noremapsilent)
 -- )))
 
-keymap("n", "<C-]>", "g<C-]>", opts_noremapsilent)  -- show options if tag has multiple matches
+keymap("n", "<C-]>", "g<C-]>", opts_noremapsilent) -- show options if tag has multiple matches
 
 -- Better window navigation (((
 keymap("n", "<A-h>", "<C-w>h", opts_noremapsilent)
@@ -82,7 +94,7 @@ keymap("n", "<A-l>", "<C-w>l", opts_noremapsilent)
 
 -- Insert -- (((
 keymap("i", "<f1>", "<nop>", opts_noremapsilent)
-keymap("i", "<c-c>", "<ESC>", opts_noremapsilent)  -- CTRL-C doesn't trigger the InsertLeave autocmd . map to <ESC> instead.
+keymap("i", "<c-c>", "<ESC>", opts_noremapsilent) -- CTRL-C doesn't trigger the InsertLeave autocmd . map to <ESC> instead.
 -- )))
 
 -- Visual -- (((
