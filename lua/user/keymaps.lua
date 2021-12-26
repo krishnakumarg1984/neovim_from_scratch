@@ -55,7 +55,7 @@ keymap("x", "&", ":&&<CR>", opts_noremapsilent)
 
 -- Normal -- (((
 
-keymap("n", "<leader>e", ":Lexplore 30<cr>", opts_noremapsilent)
+keymap("n", "<leader>e", ":Lexplore 20<cr>", opts_noremapsilent)
 keymap("n", "<C-w>f", "<C-w>vgf", opts_noremapsilent) -- is a more generic mode remap required?
 
 keymap("n", "J", "mzJ`zmz", opts_noremapsilent)
