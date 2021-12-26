@@ -72,10 +72,25 @@ keymap("n", "<Space>", "za", opts_noremapsilent)
 keymap("n", "<C-]>", "g<C-]>", opts_noremapsilent) -- show options if tag has multiple matches
 
 -- Better window navigation (((
+
 keymap("n", "<A-h>", "<C-w>h", opts_noremapsilent)
 keymap("n", "<A-j>", "<C-w>j", opts_noremapsilent)
 keymap("n", "<A-k>", "<C-w>k", opts_noremapsilent)
 keymap("n", "<A-l>", "<C-w>l", opts_noremapsilent)
+
+-- )))
+
+-- Telescope keymaps (((
+
+-- keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
+keymap(
+  "n",
+  "<leader>f",
+  "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
+  opts_noremapsilent
+)
+keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts_noremapsilent)
+
 -- )))
 
 -- -- Resize with arrows (((
