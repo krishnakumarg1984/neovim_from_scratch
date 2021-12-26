@@ -1,3 +1,5 @@
+-- vim: foldmarker=(((,))):foldmethod=marker:foldlevel=0:shiftwidth=2:softtabstop=2:tabstop=2
+
 -- Find more schemas here: https://www.schemastore.org/json/
 local schemas = {
   {
