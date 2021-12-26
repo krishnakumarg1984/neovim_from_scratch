@@ -101,6 +101,7 @@ return packer.startup(function(use)
 
   use("neovim/nvim-lspconfig") -- enable LSP
   use("williamboman/nvim-lsp-installer") -- simple to use language server installer
+  use("tamago324/nlsp-settings.nvim") -- language server settings defined in json for
 
   -- )))
 
@@ -108,6 +109,26 @@ return packer.startup(function(use)
 
   use("nvim-telescope/telescope.nvim")
   use("nvim-telescope/telescope-media-files.nvim")
+
+  -- )))
+
+  -- Treesitter (((
+
+  use({
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate",
+  })
+
+  -- )))
+
+  -- AsyncTask and AsyncRun (((
+
+  use({
+    "skywind3000/asynctasks.vim",
+    requires = { "skywind3000/asyncrun.vim" },
+    -- cmd = { "AsyncTask", "AsyncTaskMacro", "AsyncTaskList", "AsyncTaskEdit", "AsyncRun", "AsyncStop" },
+    -- ft = { "cpp" },
+  })
 
   -- )))
 
