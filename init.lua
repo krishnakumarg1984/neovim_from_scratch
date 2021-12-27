@@ -9,3 +9,4 @@ require("user.lsp") -- 'lsp' is a folder with detailed config with an entry-poin
 require("user.telescope")
 require("user.treesitter")
 require("user.asynctasks_asyncrun")
+require("user.autopairs")
