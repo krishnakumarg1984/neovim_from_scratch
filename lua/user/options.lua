@@ -19,6 +19,15 @@ vim.cmd([[set formatoptions-=cro]]) -- TODO: this doesn't seem to work
 vim.cmd([[set formatoptions-=t]])
 -- )))
 
+-- Settings for 'fillchar' (((
+
+vim.cmd("set fillchars=vert:│,diff:⣿")  -- no ~ for end-of-buffer lines.
+vim.cmd([[set fillchars+=foldopen:▾,foldsep:│,foldclose:▸]]) -- https://vi.stackexchange.com/questions/21872/change-fold-sign-character
+
+-- )))
+
+
+
 -- )))
 
 -- vim.opt settings (mostly 'append') (((
@@ -115,6 +124,14 @@ local options = {
   relativenumber = true, -- set relative numbered lines
   numberwidth = 4, -- set number column width to 2 {default 4}
   signcolumn = "yes", -- always show the sign column, otherwise it would shift the text each time diagnostics appear/become resolved
+
+  -- )))
+
+  -- Fold settings (((
+
+  foldlevel=2, -- Sets the fold level. Folds with a higher level will be closed. Setting this option to zero will close all folds.  Higher numbers will close fewer folds. This option is set by commands like |zm|, |zM| and |zR|. See |fold-foldlevel|.
+  foldlevelstart=2,
+  foldcolumn="auto:5",
 
   -- )))
 
