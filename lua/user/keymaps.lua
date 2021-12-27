@@ -55,7 +55,7 @@ keymap("x", "&", ":&&<CR>", opts_noremapsilent)
 
 -- Normal -- (((
 
-keymap("n", "<leader>e", ":Lexplore 20<cr>", opts_noremapsilent)
+-- keymap("n", "<leader>e", ":Lexplore 20<cr>", opts_noremapsilent)
 keymap("n", "<C-w>f", "<C-w>vgf", opts_noremapsilent) -- is a more generic mode remap required?
 
 keymap("n", "J", "mzJ`zmz", opts_noremapsilent)
@@ -158,4 +158,10 @@ keymap("t", "<A-h>", "<C-\\><C-N><C-w>h", term_opts)
 keymap("t", "<A-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<A-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<A-l>", "<C-\\><C-N><C-w>l", term_opts)
+-- )))
+
+-- Nvimtree (((
+
+keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts_noremapsilent)
+
 -- )))
