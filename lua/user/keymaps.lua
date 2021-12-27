@@ -153,11 +153,13 @@ keymap("c", "<c-p>", "<up>", opts_noremapsilent)
 
 -- Terminal -- (((
 -- Better terminal navigation
+
 keymap("t", "<Esc>", "<C-\\><C-n>", term_opts)
-keymap("t", "<A-h>", "<C-\\><C-N><C-w>h", term_opts)
-keymap("t", "<A-j>", "<C-\\><C-N><C-w>j", term_opts)
-keymap("t", "<A-k>", "<C-\\><C-N><C-w>k", term_opts)
-keymap("t", "<A-l>", "<C-\\><C-N><C-w>l", term_opts)
+-- keymap("t", "<A-h>", "<C-\\><C-N><C-w>h", term_opts)
+-- keymap("t", "<A-j>", "<C-\\><C-N><C-w>j", term_opts)
+-- keymap("t", "<A-k>", "<C-\\><C-N><C-w>k", term_opts)
+-- keymap("t", "<A-l>", "<C-\\><C-N><C-w>l", term_opts)
+
 -- )))
 
 -- Nvimtree (((
