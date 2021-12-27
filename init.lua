@@ -8,3 +8,4 @@ require("user.cmp")
 require("user.lsp") -- 'lsp' is a folder with detailed config with an entry-point file 'init.lua'
 require("user.telescope")
 require("user.treesitter")
+require("user.asynctasks_asyncrun")
