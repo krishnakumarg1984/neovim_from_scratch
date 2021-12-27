@@ -162,8 +162,8 @@ keymap("t", "<Esc>", "<C-\\><C-n>", term_opts)
 
 -- )))
 
--- Nvimtree (((
-
-keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts_noremapsilent)
-
--- )))
+-- -- Nvimtree (((
+--
+-- keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts_noremapsilent)
+--
+-- -- )))
