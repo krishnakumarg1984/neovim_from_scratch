@@ -86,10 +86,10 @@ keymap("n", "<A-l>", "<C-w>l", opts_noremapsilent)
 keymap(
   "n",
   "<leader>f",
-  "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
+  "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
   opts_noremapsilent
 )
-keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts_noremapsilent)
+-- keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts_noremapsilent)
 
 -- )))
 
@@ -147,8 +147,10 @@ keymap("x", ">", ">gv", opts_noremapsilent)
 -- )))
 
 -- Command -- (((
+
 keymap("c", "<c-n>", "<down>", opts_noremapsilent)
 keymap("c", "<c-p>", "<up>", opts_noremapsilent)
+
 -- )))
 
 -- Terminal -- (((
