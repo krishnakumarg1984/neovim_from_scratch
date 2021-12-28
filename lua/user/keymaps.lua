@@ -31,10 +31,12 @@ local keymap = vim.api.nvim_set_keymap -- Shorten function name
 -- )))
 
 -- Move across wrapped lines like regular lines (((
-keymap("", "<Up>", "gk", opts_remapsilent)
-keymap("", "<Down>", "gj", opts_remapsilent)
-keymap("", "k", "gk", opts_remapsilent)
-keymap("", "j", "gj", opts_remapsilent)
+
+-- keymap("", "<Up>", "gk", opts_remapsilent)
+-- keymap("", "<Down>", "gj", opts_remapsilent)
+-- keymap("", "k", "gk", opts_remapsilent)
+-- keymap("", "j", "gj", opts_remapsilent)
+
 -- )))
 
 -- Disable some mappings (((
