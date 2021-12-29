@@ -50,7 +50,7 @@ null_ls.setup({
     diagnostics.chktex,
     diagnostics.codespell,
     diagnostics.cppcheck,
-    diagnostics.cspell,
+    -- diagnostics.cspell,
     diagnostics.flake8,
     diagnostics.hadolint,
     diagnostics.jsonlint,

@@ -1,0 +1,53 @@
+{
+  "language": "en",
+  // words - list of words to be always considered correct
+  "words": [
+    "foldmarker",
+    "foldmethod",
+    "foldlevel",
+    "shiftwidth",
+    "softtabstop",
+    "keymaps",
+    "githubusercontent",
+    "streetsidesoftware",
+    "vsmarketplacebadge",
+    "visualstudio"
+  ]
+}
+
+// {
+//     "languageSettings": [
+//         // This one works with Python
+//         {
+//             "languageId": "python",
+//             "includeRegExpList": [
+//                 "/#.*/",
+//                 "/('''|\"\"\")[^\\1]+?\\1/g",
+//                 "strings"
+//             ]
+//         },
+//         // This one works with JavaScript, Typescript, etc
+//         {
+//             "languageId": "javascript,typescript",
+//             "includeRegExpList": [
+//                 "CStyleComment",
+//                 "strings"
+//             ]
+//         },
+//         // Use with cpp or c files
+//         {
+//             "languageId": "cpp,c",
+//             // Turn off compound words, because it is only checking strings.
+//             "allowCompoundWords": false,
+//             // Only check comments and strings
+//             "includeRegExpList": [
+//                 "CStyleComment",
+//                 "string"
+//             ],
+//             // Exclude includes, because they are also strings.
+//             "ignoreRegExpList": [
+//                 "/#include.*/"
+//             ]
+//         }
+//     ]
+// }

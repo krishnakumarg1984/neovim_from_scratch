@@ -24,12 +24,12 @@ end
 
 -- Autocommand that reloads neovim whenever you save the plugins.lua file (((
 
-vim.cmd([[
-augroup packer_user_config
-autocmd!
-autocmd BufWritePost plugins.lua source <afile> | PackerSync
-augroup end
-]])
+-- vim.cmd([[
+-- augroup packer_user_config
+-- autocmd!
+-- autocmd BufWritePost plugins.lua source <afile> | PackerSync
+-- augroup end
+-- ]])
 
 --)))
 
@@ -170,3 +170,35 @@ return packer.startup(function(use)
 
   -- )))
 end)
+
+-- Note-taking systems, Documentation generators, to-do systems (((
+--[[
+
+Personal wiki/notes
+-------------------
+https://github.com/mickael-menu/zk + https://github.com/mickael-menu/zk-nvim  (others: https://github.com/terror/zk, https://github.com/sirupsen/zk)
+https://github.com/xwmx/nb
+mkdocs material
+zeta-note (markdown lsp server)
+org-mode (with org-roam)
+Markdown + https://github.com/jakewvincent/mkdnflow.nvim + Markor on android + syncthing (or another service to sync)
+vim-wiki (is vimscript)
+wiki.vim
+https://github.com/srid/emanote
+neorg
+https://github.com/oberblastmeister/neuron.nvim (neuron is deprecated and succeeded by emanote)
+
+ToDo
+----
+todotxt.org
+taskwarrior (taskwiki + vimwiki)
+
+Time tracking
+-------------
+Timewarrior
+
+Other proprietary systems
+-------------------------
+google keep (proprietary)
+]]
+-- )))

@@ -117,7 +117,7 @@ end
 -- on_attach() function (((
 
 M.on_attach = function(client, bufnr)
-  if client.name == "tsserver" or client.name == "clangd" then
+  if client.name == "tsserver" or client.name == "clangd" or client.name == "jsonls" then
     client.resolved_capabilities.document_formatting = false
   end
   lsp_keymaps(bufnr)
