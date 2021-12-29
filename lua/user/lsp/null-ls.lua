@@ -59,7 +59,7 @@ null_ls.setup({
     diagnostics.proselint,
     diagnostics.pylint,
     diagnostics.pylama,
-    diagnostics.selene,
+    -- diagnostics.selene,
     -- will show code and source name
     diagnostics.shellcheck.with({ diagnostics_format = "[#{c}] #{m} (#{s})" }),
     diagnostics.vint,
@@ -68,7 +68,7 @@ null_ls.setup({
     diagnostics.revive.with({ method = null_ls.methods.DIAGNOSTICS_ON_SAVE }),
     diagnostics.staticcheck.with({ method = null_ls.methods.DIAGNOSTICS_ON_SAVE }),
 
-    code_actions.gitsigns,
+    -- code_actions.gitsigns,
     code_actions.proselint,
     code_actions.shellcheck,
   },

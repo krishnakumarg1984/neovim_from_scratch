@@ -65,7 +65,7 @@ keymap("n", "'", "`", opts_noremapsilent)
 -- keymap("n", "Y", "y$", opts_noremapsilent) -- default since nvim 0.6
 
 -- Navigate folds (((
-keymap("n", "zf", "zMzvzz", opts_noremapsilent)
+-- keymap("n", "zf", "zMzvzz", opts_noremapsilent)
 -- keymap("n", "zj", "zcjzOzz", opts_noremapsilent)
 -- keymap("n", "zk", "zckzOzz", opts_noremapsilent)
 keymap("n", "<Space>", "za", opts_noremapsilent)
@@ -85,12 +85,12 @@ keymap("n", "<A-l>", "<C-w>l", opts_noremapsilent)
 -- Telescope keymaps (((
 
 -- keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
-keymap(
-  "n",
-  "<leader>f",
-  "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-  opts_noremapsilent
-)
+-- keymap(
+--   "n",
+--   "<leader>f",
+--   "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+--   opts_noremapsilent
+-- )
 -- keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts_noremapsilent)
 
 -- )))

@@ -17,9 +17,22 @@ configs.setup({
     disable = { "" }, -- list of language that will be disabled
     additional_vim_regex_highlighting = true,
   },
+  refactor = {
+    highlight_definitions = { enable = true },
+    -- highlight_current_scope = { enable = true },
+    -- smart_rename = {
+    --     enable = true,
+    --     keymaps = {
+    --         smart_rename = "grr",
+    --     },
+    -- },
+  },
   indent = { enable = true, disable = { "yaml" } },
   context_commentstring = {
     enable = true,
     enable_autocmd = false,
+    config = {
+      vim = "// %s",
+    },
   },
 })

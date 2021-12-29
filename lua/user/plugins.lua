@@ -25,10 +25,10 @@ end
 -- Autocommand that reloads neovim whenever you save the plugins.lua file (((
 
 -- vim.cmd([[
--- augroup packer_user_config
--- autocmd!
--- autocmd BufWritePost plugins.lua source <afile> | PackerSync
--- augroup end
+--   augroup packer_user_config
+--   autocmd!
+--   autocmd BufWritePost plugins.lua source <afile> | PackerSync
+--   augroup end
 -- ]])
 
 --)))
@@ -68,22 +68,46 @@ return packer.startup(function(use)
 
   -- )))
 
-  -- Other plugins (((
+  -- Vimscript plugins (((
+
+  use({ "gauteh/vim-cppman", ft = { "cpp" } })
+  use({ "jeffkreeftmeijer/vim-numbertoggle", event = "InsertEnter" })
+  use({ "lervag/vimtex" })
+  use({ "ludovicchabant/vim-gutentags", event = "BufWinEnter" })
+  use({ "sgur/vim-editorconfig", event = "BufWinEnter" })
+  use({ "tpope/vim-repeat", event = "BufWinEnter" })
+  use({ "tpope/vim-unimpaired", event = "BufWinEnter" })
+
+  -- )))
+
+  -- Other lua plugins (((
 
   use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
   use("numToStr/Comment.nvim") -- Easily comment stuff
   use("kyazdani42/nvim-web-devicons")
   use("kyazdani42/nvim-tree.lua")
   use("akinsho/bufferline.nvim")
-  use("moll/vim-bbye")
+  use({ "famiu/bufdelete.nvim", cmd = { "Bdelete", "Bwipeout" } })
   use("nvim-lualine/lualine.nvim")
   use("akinsho/toggleterm.nvim")
   use("ahmedkhalf/project.nvim")
   use("lewis6991/impatient.nvim")
   use("lukas-reineke/indent-blankline.nvim")
-  use("goolord/alpha-nvim")
+  -- use("goolord/alpha-nvim")
   use("antoinemadec/FixCursorHold.nvim") -- This is needed to fix lsp doc highlight
   use("folke/which-key.nvim")
+  use("luukvbaal/stabilize.nvim")
+  use("folke/todo-comments.nvim") -- :ToDoQuickFix, :ToDoTrouble, :ToDoTelescope,
+  -- TODO: do this today
+  -- HACK: This is just a hack
+  -- FIX: this needs fix
+  -- PERF: perf issue here
+  -- WARN: things don't work much
+  -- NOTE: make a note of this
+  use("nathom/filetype.nvim")
+  use("karb94/neoscroll.nvim")
+  use("kevinhwang91/nvim-hlslens")
+  use("https://gitlab.com/yorickpeterse/nvim-pqf")
 
   -- )))
 
@@ -122,6 +146,8 @@ return packer.startup(function(use)
   use("williamboman/nvim-lsp-installer") -- simple to use language server installer
   use("tamago324/nlsp-settings.nvim") -- language server settings defined in json for
   use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
+  use("kosayoda/nvim-lightbulb")
+  use({ "tami5/lspsaga.nvim" })
 
   -- )))
 
@@ -132,13 +158,27 @@ return packer.startup(function(use)
 
   -- )))
 
-  -- Treesitter (((
+  -- Treesitter & related plugins (((
 
   use({
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
   })
   use("JoosepAlviste/nvim-ts-context-commentstring")
+  use({
+    "nvim-treesitter/nvim-treesitter-refactor",
+    after = { "nvim-treesitter" },
+    requires = { "nvim-treesitter" },
+  })
+  use({
+    "nvim-treesitter/nvim-treesitter-textobjects",
+    after = { "nvim-treesitter" },
+    requires = { { "nvim-treesitter" } },
+  })
+  use({ "romgrk/nvim-treesitter-context", requires = { { "nvim-treesitter" } } })
+  use({ "mizlan/iswap.nvim", requires = { { "nvim-treesitter" } } })
+  use({ "folke/zen-mode.nvim", cmd = "ZenMode" })
+  use({ "folke/twilight.nvim", cmd = { "ZenMode", "Twilight", "TwilightEnable" } })
 
   -- )))
 
@@ -201,4 +241,103 @@ Other proprietary systems
 -------------------------
 google keep (proprietary)
 ]]
+-- )))
+
+-- Other interesting vim plugins (((
+-- ipython/jupyter vim plugins (((
+-- use "goerz/jupytext.vim"
+-- use { 'dccsillag/magma-nvim', run = ':UpdateRemotePlugins' } -- need to set up mappings
+-- use("bfredl/nvim-ipy")
+-- use("jupyter-vim/jupyter-vim")
+-- use("untitled-ai/jupyter_ascending")
+-- use({ "hanschen/vim-ipython-cell", requires = { "jpalardy/vim-slime" } })
+-- )))
+
+-- use("kevinhwang91/nvim-bqf")
+-- use("Konfekt/FastFold")
+-- use("Konfekt/vim-sentence-chopper")
+-- use("mg979/tasks.vim")
+-- use("norcalli/nvim-colorizer.lua")
+-- use("ntpeters/vim-better-whitespace")
+-- use("ojroques/vim-oscyank")
+-- use("s1n7ax/nvim-comment-frame")
+-- use("tweekmonster/wstrip.vim")
+-- use("urbainvaes/vim-ripple")
+-- use("wellle/targets.vim")
+-- use("wsdjeg/vim-assembly")
+-- use({ "andymass/vim-matchup", event = "BufWinEnter" })
+-- use({ "famiu/bufdelete.nvim", cmd = { "Bdelete", "Bwipeout" } })
+-- use({ "ii14/exrc.vim" }) -- "jenterkin/vim-autosource", "embear/vim-localvimrc", "LucHermitte/local_vimrc", "thinca/vim-localrc"
+-- use({ "numtostr/BufOnly.nvim", cmd = { "BufOnly" } })
+-- use({ "scrooloose/vim-slumlord", requires = { { "aklt/plantuml-syntax" }, { "tyru/open-browser.vim" } } })
+-- use({ "tpope/vim-fugitive", event = "BufWinEnter" })
+-- use({ "tyru/capture.vim", cmd = { "Capture" } })
+-- use({ "weirongxu/plantuml-previewer.vim", requires = { { "aklt/plantuml-syntax" }, { "tyru/open-browser.vim" } } })
+-- use({ "tyru/open-browser.vim", event = "BufWinEnter" })
+
+-- -- indent-o-matic {{{
+-- use({
+--   "Darazaki/indent-o-matic",
+--   event = "InsertEnter",
+--   config = function()
+--     require("indent-o-matic").setup({})
+--   end,
+-- })
+-- -- }}}
+
+-- lightspeed.nvim {{{
+-- use {
+--     "ggandor/lightspeed.nvim",
+--     requires = "tpope/vim-repeat",
+-- }
+-- }}}
+
+-- -- marks.nvim {{{
+-- use({
+--  "chentau/marks.nvim",
+--  event = "BufRead",
+--  config = function()
+--    require("marks").setup({
+--      -- whether to map keybinds or not. default true
+--      default_mappings = false,
+--      -- which builtin marks to show. default {}
+--      builtin_marks = { ".", "<", ">", "^" },
+--      -- whether movements cycle back to the beginning/end of buffer. default true
+--      cyclic = true,
+--      -- whether the shada file is updated after modifying uppercase marks. default false
+--      force_write_shada = false,
+--      -- how often (in ms) to redraw signs/recompute mark positions.
+--      -- higher values will have better performance but may cause visual lag,
+--      -- while lower values may cause performance penalties. default 150.
+--      refresh_interval = 250,
+--      -- sign priorities for each type of mark - builtin marks, uppercase marks, lowercase
+--      -- marks, and bookmarks.
+--      -- can be either a table with all/none of the keys, or a single number, in which case
+--      -- the priority applies to all marks.
+--      -- default 10.
+--      sign_priority = { lower = 10, upper = 15, builtin = 8, bookmark = 20 },
+--      -- marks.nvim allows you to configure up to 10 bookmark groups, each with its own
+--      -- sign/virttext. Bookmarks can be used to group together positions and quickly move
+--      -- across multiple buffers. default sign is '!@#$%^&*()' (from 0 to 9), and
+--      -- default virt_text is "".
+--      bookmark_0 = {
+--        sign = "⚑",
+--        -- virt_text = "hello world",
+--      },
+--      mappings = {},
+--    })
+--  end,
+-- })
+-- -- }}}
+
+-- -- bufresize.nvim {{{
+-- use({
+--   "kwkarlwang/bufresize.nvim",
+--   config = function()
+--     require("bufresize").setup()
+--   end,
+--   event = "BufRead",
+-- })
+-- -- }}}
+
 -- )))
