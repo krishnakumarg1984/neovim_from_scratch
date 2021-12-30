@@ -111,6 +111,7 @@ return packer.startup(function(use)
   -- use({ "TimUntersberger/neogit", requires = "nvim-lua/plenary.nvim" })
   -- use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" })
   use({ "stevearc/dressing.nvim" })
+  use({ "chentau/marks.nvim" })
 
   -- )))
 
@@ -210,6 +211,11 @@ return packer.startup(function(use)
     requires = { { "nvim-telescope/telescope.nvim" }, { "nvim-lua/plenary.nvim" } },
   })
   -- )))
+  use({
+    "crispgm/telescope-heading.nvim",
+    requires = { { "nvim-telescope/telescope.nvim" }, { "nvim-lua/plenary.nvim" } },
+  })
+  use("nvim-telescope/telescope-symbols.nvim")
 
   -- )))
 
@@ -410,5 +416,11 @@ google keep (proprietary)
 -- })
 
 -- -- )))
+-- use 'cljoly/telescope-repo.nvim'
+-- use {
+--   'nvim-telescope/telescope.nvim',
+--   requires = { {'nvim-lua/plenary.nvim'} }
+-- }
+-- https://github.com/TC72/telescope-tele-tabby.nvim
 
 -- )))

@@ -95,11 +95,6 @@ telescope.setup({
       filetypes = { "png", "webp", "jpg", "jpeg" },
       find_cmd = "rg", -- find command (defaults to `fd`)
     },
-    lsp_handlers = {
-      code_action = {
-        telescope = require("telescope.themes").get_dropdown({}),
-      },
-    },
     fzf = {
       fuzzy = true, -- false will only do exact matching
       override_generic_sorter = true, -- override the generic sorter
@@ -117,9 +112,9 @@ telescope.setup({
 
 telescope.load_extension("aerial")
 telescope.load_extension("fzf")
+telescope.load_extension("heading")
 
 -- telescope.extensions.packer.plugins()
--- telescope.load_extension("lsp_handlers")
 -- telescope.load_extension("mapper")
 -- telescope.load_extension("media_files")
 -- telescope.load_extension("packer")
