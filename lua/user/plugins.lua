@@ -108,7 +108,9 @@ return packer.startup(function(use)
   use("karb94/neoscroll.nvim")
   use("kevinhwang91/nvim-hlslens")
   use("https://gitlab.com/yorickpeterse/nvim-pqf")
-  use({ "TimUntersberger/neogit", requires = "nvim-lua/plenary.nvim" })
+  -- use({ "TimUntersberger/neogit", requires = "nvim-lua/plenary.nvim" })
+  -- use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" })
+  use({ "stevearc/dressing.nvim" })
 
   -- )))
 
@@ -133,6 +135,7 @@ return packer.startup(function(use)
   use({
     "f3fora/cmp-nuspell",
     rocks = { "lua-nuspell" },
+    ft = { "text", "markdown", "rmd", "gitcommit", "mail", "tex", "rst", "asciidoc" },
   })
   use({
     "f3fora/cmp-spell",
@@ -171,6 +174,7 @@ return packer.startup(function(use)
   use("onsails/lspkind-nvim")
   use({ "stevearc/aerial.nvim" })
   use({ "rmagatti/goto-preview" })
+  use("https://gitlab.com/yorickpeterse/nvim-dd")
 
   -- )))
 
@@ -320,7 +324,7 @@ google keep (proprietary)
 -- use({ "famiu/bufdelete.nvim", cmd = { "Bdelete", "Bwipeout" } })
 -- use({ "ii14/exrc.vim" }) -- "jenterkin/vim-autosource", "embear/vim-localvimrc", "LucHermitte/local_vimrc", "thinca/vim-localrc"
 -- use({ "numtostr/BufOnly.nvim", cmd = { "BufOnly" } })
--- use({ "scrooloose/vim-slumlord", requires = { { "aklt/plantuml-syntax" }, { "tyru/open-browser.vim" } } })
+-- use({ "scrooloose/vim-slumlord", requires = { { "aklt/plantuml-syntax" }, { "tyru/open-browser.vim" } } }) -- also a telescope extension
 -- use({ "tpope/vim-fugitive", event = "BufWinEnter" })
 -- use({ "tyru/capture.vim", cmd = { "Capture" } })
 -- use({ "weirongxu/plantuml-previewer.vim", requires = { { "aklt/plantuml-syntax" }, { "tyru/open-browser.vim" } } })

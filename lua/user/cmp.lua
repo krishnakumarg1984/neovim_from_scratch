@@ -29,6 +29,15 @@ end
 
 -- )))
 
+-- "has_words_before" function (((
+
+local has_words_before = function()
+  local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+end
+
+-- )))
+
 -- "kind_icons" (((
 
 --   פּ ﯟ   some other good icons
@@ -92,6 +101,8 @@ cmp.setup({
         luasnip.expand()
       elseif luasnip.expand_or_jumpable() then
         luasnip.expand_or_jump()
+      elseif has_words_before() then
+        cmp.complete()
       elseif check_backspace() then
         fallback()
       else
@@ -119,25 +130,41 @@ cmp.setup({
     format = function(entry, vim_item)
       -- Kind icons
       vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
-      -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+      -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatenates the icons with the name of the item kind
+      -- vim_item.with_text = true,
+      -- vim_item.maxwidth = 50,
       vim_item.menu = ({
         nvim_lsp = "[LSP]",
         nvim_lua = "[NVIM_LUA]",
         luasnip = "[Snippet]",
         buffer = "[Buffer]",
         path = "[Path]",
+        nuspell = "[Nuspell]",
+        spell = "[Spell]",
+        look = "[Look]",
+        dictionary = "[Dictionary]",
+        tags = "[Tags]",
+        latex_symbols = "[Latex]",
+        tmux = "[Tmux]",
       })[entry.source.name]
       return vim_item
     end,
   },
   sources = {
-    { name = "nvim_lsp" },
-    { name = "nvim_lua" },
     { name = "luasnip" },
-    { name = "buffer" },
-    { name = "path" },
+    { name = "nvim_lua" },
+    { name = "nvim_lsp", max_item_count = 15 },
+    { name = "path", keyword_length = 3 },
+    -- { name = 'fuzzy_path', keyword_length = 2, option = {fd_timeout_msec = 500} },
+    { name = "buffer", keyword_length = 2 },
+    { name = "tags", max_item_count = 10 },
+    { name = "tmux" },
+    { name = "nuspell", max_item_count = 7, priority = 100 },
+    { name = "spell", max_item_count = 7 },
+    { name = "look", max_item_count = 7, keyword_length = 2, option = { convert_case = true, loud = true } },
+    { name = "dictionary", max_item_count = 7, keyword_length = 2 },
   },
-  confirm_opts = {
+  confirm_option = {
     behavior = cmp.ConfirmBehavior.Replace,
     select = false,
   },

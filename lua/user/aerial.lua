@@ -14,8 +14,8 @@ aerial.register_attach_cb(function(bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>{", "<cmd>AerialPrev<CR>", {})
   vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>}", "<cmd>AerialNext<CR>", {})
   -- Jump up the tree with '[[' or ']]'
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "[[", "<cmd>AerialPrevUp<CR>", {})
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "]]", "<cmd>AerialNextUp<CR>", {})
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>[[", "<cmd>AerialPrevUp<CR>", {})
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>]]", "<cmd>AerialNextUp<CR>", {})
 end)
 
 -- open_automatic can be specified as a filetype map. For example, the below
@@ -23,7 +23,7 @@ end)
 vim.g.aerial = {
   -- The minimum width of the aerial window.
   -- To disable dynamic resizing, set this to be equal to max_width
-  min_width = 18,
+  min_width = 20,
   open_automatic = {
     -- use underscore to specify the default behavior
     -- ["_"] = true,
@@ -33,3 +33,9 @@ vim.g.aerial = {
   placement_editor_edge = true,
   close_behavior = "global",
 }
+
+vim.cmd([[
+    augroup _aerialFiletype
+    autocmd!
+    autocmd filetype aerial setlocal nolist
+  ]])
