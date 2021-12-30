@@ -3,7 +3,7 @@
 vim.cmd([[
 let g:gutentags_ctags_exclude_wildignore = 1   " https://idie.ru/posts/vim-modern-cpp
 " let g:gutentags_add_default_project_roots = 0
-let g:gutentags_cache_dir = expand('~/.gutentags_cache') " One of the things that annoyed me was that for every new project I would have at work, I had to add the tags and tags.lock file to the .gitignore file every single project so I tried to configure it outside of the git repository so that Git wouldn't track it. You can do this with g:gutentags_cache_dir by configuring it like so:
+let g:gutentags_cache_dir = expand('~/.local/share/nvim/backup/gutentags_cache') " One of the things that annoyed me was that for every new project I would have at work, I had to add the tags and tags.lock file to the .gitignore file every single project so I tried to configure it outside of the git repository so that Git wouldn't track it. You can do this with g:gutentags_cache_dir by configuring it like so:
 let g:gutentags_exclude_filetypes = ['gitcommit', 'gitconfig', 'gitrebase', 'gitsendemail', 'git']
 let g:gutentags_modules=['ctags']
 let g:gutentags_project_root  = ['GNUmakefile','makefile','Makefile','.root','package.json', '.latexmain']
