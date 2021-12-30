@@ -30,7 +30,8 @@ local opts = {
 local mappings = {
   -- ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
   ["b"] = {
-    "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+    -- "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+    "<cmd>Telescope buffers<cr>",
     "Buffers",
   },
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
@@ -44,9 +45,13 @@ local mappings = {
     "Find files",
   },
   ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
+  ["m"] = { "<cmd>Telescope man_pages<cr>", "Man pages" },
+  ["M"] = { "<cmd>Telescope marks<cr>", "Marks" },
   ["P"] = { "<cmd>Telescope projects<cr>", "Projects" },
   ["o"] = { "<cmd>Telescope oldfiles<cr>", "Recent Files" },
   ["k"] = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
+  ["T"] = { "<cmd>Telescope tags<cr>", "Tags" },
+  ["O"] = { "<cmd>Telescope vim_options<cr>", "Vim Options" },
 
   p = {
     name = "Packer",
@@ -67,6 +72,7 @@ local mappings = {
     r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
     R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
     s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
+    S = { "<cmd>Telescope git_status<cr>", "Git Status" },
     u = {
       "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>",
       "Undo Stage Hunk",

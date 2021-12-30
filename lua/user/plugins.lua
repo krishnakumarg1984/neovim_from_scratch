@@ -108,6 +108,7 @@ return packer.startup(function(use)
   use("karb94/neoscroll.nvim")
   use("kevinhwang91/nvim-hlslens")
   use("https://gitlab.com/yorickpeterse/nvim-pqf")
+  use({ "TimUntersberger/neogit", requires = "nvim-lua/plenary.nvim" })
 
   -- )))
 
@@ -128,6 +129,20 @@ return packer.startup(function(use)
   use("saadparwaiz1/cmp_luasnip") -- snippet completions
   use("hrsh7th/cmp-nvim-lsp")
   use("hrsh7th/cmp-nvim-lua")
+  -- use("andersevenrud/cmp-tmux")
+  use({
+    "f3fora/cmp-nuspell",
+    rocks = { "lua-nuspell" },
+  })
+  use({
+    "f3fora/cmp-spell",
+    ft = { "text", "markdown", "rmd", "gitcommit", "mail", "tex", "rst", "asciidoc" },
+  })
+  use({
+    "octaltree/cmp-look",
+    ft = { "text", "markdown", "rmd", "gitcommit", "mail", "tex", "rst", "asciidoc" },
+  })
+  use("quangnguyen30192/cmp-nvim-tags")
 
   -- )))
 
@@ -162,7 +177,7 @@ return packer.startup(function(use)
   -- Telescope (((
 
   use("nvim-telescope/telescope.nvim")
-  use("nvim-telescope/telescope-media-files.nvim")
+  -- use("nvim-telescope/telescope-media-files.nvim")
   -- use("nvim-telescope/telescope-packer.nvim")
   -- cheatsheet.nvim (((
   use({
@@ -172,6 +187,23 @@ return packer.startup(function(use)
       { "nvim-lua/popup.nvim" },
       { "nvim-lua/plenary.nvim" },
     },
+  })
+  -- )))
+  -- octo.nvim ((( -- or  nvim-telescope / telescope-github.nvim
+  use({
+    "pwntester/octo.nvim",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim",
+      "kyazdani42/nvim-web-devicons",
+    },
+  })
+  -- )))
+  -- telescope-fzf-native (((
+  use({
+    "nvim-telescope/telescope-fzf-native.nvim",
+    run = "make",
+    requires = { { "nvim-telescope/telescope.nvim" }, { "nvim-lua/plenary.nvim" } },
   })
   -- )))
 
@@ -195,7 +227,7 @@ return packer.startup(function(use)
     requires = { { "nvim-treesitter" } },
   })
   use({ "romgrk/nvim-treesitter-context", requires = { { "nvim-treesitter" } } })
-  use({ "mizlan/iswap.nvim", requires = { { "nvim-treesitter" } } })
+  -- use({ "mizlan/iswap.nvim", requires = { { "nvim-treesitter" } } })
   use({ "folke/zen-mode.nvim", cmd = "ZenMode" })
   use({ "folke/twilight.nvim", cmd = { "ZenMode", "Twilight", "TwilightEnable" } })
 

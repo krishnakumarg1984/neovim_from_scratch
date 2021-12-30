@@ -7,12 +7,13 @@ end
 
 vim.g.indent_blankline_buftype_exclude = { "terminal", "nofile" }
 vim.g.indent_blankline_filetype_exclude = {
-  "help",
-  "startify",
+  "aerial",
   "dashboard",
-  "packer",
+  "help",
   "neogitstatus",
   "NvimTree",
+  "packer",
+  "startify",
   "Trouble",
 }
 vim.g.indentLine_enabled = 1
@@ -45,6 +46,8 @@ vim.g.indent_blankline_context_patterns = {
   "import_statement",
   "operation_type",
 }
+-- vim.g.indent_blankline_char_highlight_list = { "Error", "Function" }
+-- vim.g.indent_blankline_context_char_list = ['┃', '║', '╬', '█']
 -- HACK: work-around for https://github.com/lukas-reineke/indent-blankline.nvim/issues/59
 vim.wo.colorcolumn = "99999"
 

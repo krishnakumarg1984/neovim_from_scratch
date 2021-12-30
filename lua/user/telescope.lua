@@ -5,10 +5,6 @@ if not status_ok then
   return
 end
 
-telescope.load_extension("media_files")
-telescope.load_extension("aerial")
--- telescope.load_extension("packer")
-
 local actions = require("telescope.actions")
 
 telescope.setup({
@@ -99,6 +95,18 @@ telescope.setup({
       filetypes = { "png", "webp", "jpg", "jpeg" },
       find_cmd = "rg", -- find command (defaults to `fd`)
     },
+    lsp_handlers = {
+      code_action = {
+        telescope = require("telescope.themes").get_dropdown({}),
+      },
+    },
+    fzf = {
+      fuzzy = true, -- false will only do exact matching
+      override_generic_sorter = true, -- override the generic sorter
+      override_file_sorter = true, -- override the file sorter
+      case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+      -- the default case_mode is "smart_case"
+    },
     -- Your extension configuration goes here:
     -- extension_name = {
     --   extension_config_key = value,
@@ -106,3 +114,19 @@ telescope.setup({
     -- please take a look at the readme of the extension you want to configure
   },
 })
+
+telescope.load_extension("aerial")
+telescope.load_extension("fzf")
+
+-- telescope.extensions.packer.plugins()
+-- telescope.load_extension("lsp_handlers")
+-- telescope.load_extension("mapper")
+-- telescope.load_extension("media_files")
+-- telescope.load_extension("packer")
+-- telescope.load_extension("projects")
+-- telescope.load_extension("session-lens")
+
+vim.api.nvim_set_keymap("n", "q:", ":Telescope command_history<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "Q", ":Telescope commands<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "q/", ":Telescope search_history<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "z=", ":Telescope spell_suggest<cr>", { noremap = true, silent = true })

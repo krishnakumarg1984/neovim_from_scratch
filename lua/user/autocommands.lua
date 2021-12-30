@@ -30,7 +30,8 @@ vim.cmd([[
     " https://stackoverflow.com/questions/1832085/how-to-jump-to-the-next-tag-in-vim-help-file
     autocmd FileType help nnoremap <buffer> <leader>Tn /\|.\zs\S\{-}\|/<cr>zz
 
-    autocmd TextYankPost * silent!lua require('vim.highlight').on_yank({higroup = 'Visual', timeout = 400})
+    " autocmd TextYankPost * silent!lua require('vim.highlight').on_yank({higroup = 'Visual', timeout = 400})
+    autocmd TextYankPost * silent! lua vim.highlight.on_yank { higroup='Search', timeout=650, on_visual=true }
 
     " autocmd BufWinEnter *.txt if &ft == 'help' | wincmd L | endif
     " autocmd BufWinEnter *.txt set iskeyword+=- iskeyword+=: iskeyword+=.

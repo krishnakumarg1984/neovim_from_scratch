@@ -82,19 +82,6 @@ keymap("n", "<A-l>", "<C-w>l", opts_noremapsilent)
 
 -- )))
 
--- Telescope keymaps (((
-
--- keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
--- keymap(
---   "n",
---   "<leader>f",
---   "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
---   opts_noremapsilent
--- )
--- keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts_noremapsilent)
-
--- )))
-
 -- -- Resize with arrows (((
 -- keymap("n", "<C-Up>", ":resize +2<CR>", opts_noremapsilent)
 -- keymap("n", "<C-Down>", ":resize -2<CR>", opts_noremapsilent)
