@@ -480,6 +480,7 @@ local options = {
   list = true,
   mouse = "a", -- allow the mouse to be used in neovim (in all modes)
   pumheight = 10, -- pop up menu height. Maximum number of items to show in the popup menu (|ins-completion-menu|). Zero means "use available screen space". Default is 0.
+  pumwidth = 35,
   report = 0, -- Threshold for reporting number of lines changed.
   showtabline = 2, -- always show tabs
   splitbelow = true, -- force all horizontal splits to go below current window
@@ -487,7 +488,7 @@ local options = {
   termguicolors = true, -- set term gui colors (most terminals support this)
   timeoutlen = 500, -- time to wait for a mapped sequence to complete (in milliseconds)
   undofile = true, -- enable persistent undo
-  winaltkeys = no,
+  winaltkeys = "no",
 
   -- )))
 }

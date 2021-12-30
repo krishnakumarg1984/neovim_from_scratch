@@ -7,7 +7,7 @@ end
 
 trouble.setup({
   height = 12, -- height of the trouble list when position is top or bottom
-  mode = "lsp_document_diagnostics", -- "lsp_workspace_diagnostics", "lsp_document_diagnostics", "quickfix", "lsp_references", "loclist"
+  mode = "document_diagnostics", -- "lsp_workspace_diagnostics", "lsp_document_diagnostics", "quickfix", "lsp_references", "loclist"
   -- auto_open = true, -- automatically close the list when you have diagnostics
   auto_close = true, -- automatically close the list when you have no diagnostics
 })

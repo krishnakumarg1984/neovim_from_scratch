@@ -149,6 +149,13 @@ return packer.startup(function(use)
   use("kosayoda/nvim-lightbulb")
   use("tami5/lspsaga.nvim")
   use("folke/trouble.nvim")
+  use({
+    "ray-x/lsp_signature.nvim",
+    requires = "kyazdani42/nvim-web-devicons",
+  })
+  use("onsails/lspkind-nvim")
+  use({ "stevearc/aerial.nvim" })
+  use({ "rmagatti/goto-preview" })
 
   -- )))
 
@@ -156,6 +163,17 @@ return packer.startup(function(use)
 
   use("nvim-telescope/telescope.nvim")
   use("nvim-telescope/telescope-media-files.nvim")
+  -- use("nvim-telescope/telescope-packer.nvim")
+  -- cheatsheet.nvim (((
+  use({
+    "sudormrfbin/cheatsheet.nvim",
+    requires = {
+      { "nvim-telescope/telescope.nvim" },
+      { "nvim-lua/popup.nvim" },
+      { "nvim-lua/plenary.nvim" },
+    },
+  })
+  -- )))
 
   -- )))
 
@@ -276,7 +294,7 @@ google keep (proprietary)
 -- use({ "weirongxu/plantuml-previewer.vim", requires = { { "aklt/plantuml-syntax" }, { "tyru/open-browser.vim" } } })
 -- use({ "tyru/open-browser.vim", event = "BufWinEnter" })
 
--- -- indent-o-matic {{{
+-- -- indent-o-matic (((
 -- use({
 --   "Darazaki/indent-o-matic",
 --   event = "InsertEnter",
@@ -284,16 +302,16 @@ google keep (proprietary)
 --     require("indent-o-matic").setup({})
 --   end,
 -- })
--- -- }}}
+-- -- )))
 
--- lightspeed.nvim {{{
+-- lightspeed.nvim (((
 -- use {
 --     "ggandor/lightspeed.nvim",
 --     requires = "tpope/vim-repeat",
 -- }
--- }}}
+-- )))
 
--- -- marks.nvim {{{
+-- -- marks.nvim (((
 -- use({
 --  "chentau/marks.nvim",
 --  event = "BufRead",
@@ -329,9 +347,9 @@ google keep (proprietary)
 --    })
 --  end,
 -- })
--- -- }}}
+-- -- )))
 
--- -- bufresize.nvim {{{
+-- -- bufresize.nvim (((
 -- use({
 --   "kwkarlwang/bufresize.nvim",
 --   config = function()
@@ -339,6 +357,22 @@ google keep (proprietary)
 --   end,
 --   event = "BufRead",
 -- })
--- -- }}}
+-- -- )))
+
+-- -- session-lens and auto-session (((
+
+-- use({
+-- 	"rmagatti/auto-session",
+-- 	requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+-- 	config = function()
+-- 		require("auto-session").setup({--[[your custom config--]]
+-- 			-- path_display = { "shorten" },
+-- 			-- theme_conf = { border = false },
+-- 			-- previewer = true,
+-- 		})
+-- 	end,
+-- })
+
+-- -- )))
 
 -- )))
