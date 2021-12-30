@@ -77,6 +77,7 @@ return packer.startup(function(use)
   use({ "sgur/vim-editorconfig", event = "BufWinEnter" })
   use({ "tpope/vim-repeat", event = "BufWinEnter" })
   use({ "tpope/vim-unimpaired", event = "BufWinEnter" })
+  use({ "machakann/vim-sandwich", event = "BufWinEnter" })
 
   -- )))
 
@@ -112,6 +113,8 @@ return packer.startup(function(use)
   -- use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" })
   use({ "stevearc/dressing.nvim" })
   use({ "chentau/marks.nvim" })
+  use({ "klen/nvim-config-local" })
+  -- use({ "blackCauldron7/surround.nvim" })
 
   -- )))
 
@@ -216,6 +219,11 @@ return packer.startup(function(use)
     requires = { { "nvim-telescope/telescope.nvim" }, { "nvim-lua/plenary.nvim" } },
   })
   use("nvim-telescope/telescope-symbols.nvim")
+  use({
+    "nvim-telescope/telescope-frecency.nvim",
+    requires = { "tami5/sqlite.lua" },
+  })
+  -- use("sQVe/sort.nvim")
 
   -- )))
 

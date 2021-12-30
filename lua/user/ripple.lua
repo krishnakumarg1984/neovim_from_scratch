@@ -1,0 +1,11 @@
+-- vim: foldmarker=(((,))):foldmethod=marker:foldlevel=0:shiftwidth=2:softtabstop=2:tabstop=2
+
+-- vim.cmd([[
+-- " let g:ripple_repls = {
+--             \ 'matlab': 'matlab -nodesktop -nodisplay -nospash',
+--             \ }
+--
+-- " let g:ripple_repls = {
+-- "             \ "python": ["bpython", "", "", 1],
+-- "             \ }
+-- ])
