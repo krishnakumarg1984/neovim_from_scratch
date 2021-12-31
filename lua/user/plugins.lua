@@ -78,6 +78,7 @@ return packer.startup(function(use)
   use({ "tpope/vim-repeat", event = "BufWinEnter" })
   use({ "tpope/vim-unimpaired", event = "BufWinEnter" })
   use({ "machakann/vim-sandwich", event = "BufWinEnter" })
+  use({ "puremourning/vimspector", event = "BufWinEnter" })
 
   -- )))
 
@@ -430,5 +431,6 @@ google keep (proprietary)
 --   requires = { {'nvim-lua/plenary.nvim'} }
 -- }
 -- https://github.com/TC72/telescope-tele-tabby.nvim
+-- https://github.com/tpope/vim-apathy
 
 -- )))
