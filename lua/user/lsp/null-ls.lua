@@ -36,7 +36,7 @@ null_ls.setup({
     }),
     formatting.reorder_python_imports,
     formatting.rustfmt,
-    formatting.shellharden,
+    -- formatting.shellharden,
     formatting.shfmt.with({ extra_args = { "-i", "2", "-ci" } }),
     formatting.stylua.with({
       condition = function(utils)
