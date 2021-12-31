@@ -20,7 +20,7 @@ configs.setup({
     "go",
     "html",
     "java",
-    "javascript",
+    -- "javascript",
     "json",
     "json5",
     "jsonc",
