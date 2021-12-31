@@ -38,7 +38,7 @@ configs.setup({
     -- "rust",
     "toml",
     "verilog",
-    "vim",
+    -- "vim",
     "yaml",
   }, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
