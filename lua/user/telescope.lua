@@ -113,7 +113,7 @@ telescope.setup({
 telescope.load_extension("aerial")
 telescope.load_extension("fzf")
 telescope.load_extension("heading")
-telescope.load_extension("frecency")
+-- telescope.load_extension("frecency")
 
 -- telescope.extensions.packer.plugins()
 -- telescope.load_extension("mapper")
