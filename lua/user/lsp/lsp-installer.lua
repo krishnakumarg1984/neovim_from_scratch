@@ -60,7 +60,7 @@ end
 
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
 local servers = {
-  "ansiblels",
+  -- "ansiblels",
   "bashls",
   "c",
   "clangd",
