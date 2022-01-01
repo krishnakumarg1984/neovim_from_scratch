@@ -79,6 +79,7 @@ return packer.startup(function(use)
   use({ "tpope/vim-unimpaired", event = "BufWinEnter" })
   use({ "machakann/vim-sandwich", event = "BufWinEnter" })
   use({ "puremourning/vimspector", event = "BufWinEnter" })
+  use({ "tyru/capture.vim", cmd = { "Capture" } })
 
   -- )))
 
@@ -341,7 +342,6 @@ google keep (proprietary)
 -- use({ "numtostr/BufOnly.nvim", cmd = { "BufOnly" } })
 -- use({ "scrooloose/vim-slumlord", requires = { { "aklt/plantuml-syntax" }, { "tyru/open-browser.vim" } } }) -- also a telescope extension
 -- use({ "tpope/vim-fugitive", event = "BufWinEnter" })
--- use({ "tyru/capture.vim", cmd = { "Capture" } })
 -- use({ "weirongxu/plantuml-previewer.vim", requires = { { "aklt/plantuml-syntax" }, { "tyru/open-browser.vim" } } })
 -- use({ "tyru/open-browser.vim", event = "BufWinEnter" })
 

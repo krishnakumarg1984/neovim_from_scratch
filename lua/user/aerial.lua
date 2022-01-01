@@ -26,7 +26,7 @@ vim.g.aerial = {
   min_width = 20,
   open_automatic = {
     -- use underscore to specify the default behavior
-    -- ["_"] = true,
+    ["_"] = true,
     -- python = false,
     -- rust = false,
   },
