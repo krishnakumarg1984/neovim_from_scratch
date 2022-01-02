@@ -14,7 +14,7 @@ vim.cmd([[
   noremap <leader><leader>amfb :AsyncTask make-filebuild<cr>
   noremap <leader><leader>amfa :AsyncTask make-fileall<cr>
   noremap <leader><leader>amfc :AsyncTask make-fileclean<cr>
-  noremap <leader><leader>amfc :AsyncTask make-filerun<cr>
+  noremap <leader><leader>amfr :AsyncTask make-filerun<cr>
   noremap <leader><leader>amft :AsyncTask make-filetest<cr>
 
   noremap <leader><leader>ampb :AsyncTask make-projectbuild<cr>
