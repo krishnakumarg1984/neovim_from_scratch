@@ -30,7 +30,7 @@ null_ls.setup({
       end,
     }),
     diagnostics.codespell,
-    diagnostics.cppcheck,
+    -- diagnostics.cppcheck,
     -- diagnostics.cspell,
   },
 })
