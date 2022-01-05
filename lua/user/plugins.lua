@@ -70,15 +70,16 @@ return packer.startup(function(use)
 
   -- Vimscript plugins (((
 
-  use({ "gauteh/vim-cppman", ft = { "cpp" } })
+  -- use({ "gauteh/vim-cppman", cmd = { "Cppman" } })
   use({ "jeffkreeftmeijer/vim-numbertoggle", event = "InsertEnter" })
   use({ "lervag/vimtex" })
   use({ "ludovicchabant/vim-gutentags", event = "BufWinEnter" })
+  use({ "machakann/vim-sandwich", event = "BufWinEnter" })
+  use({ "petRUShka/vim-opencl" })
+  use({ "puremourning/vimspector", event = "BufWinEnter" })
   use({ "sgur/vim-editorconfig", event = "BufWinEnter" })
   use({ "tpope/vim-repeat", event = "BufWinEnter" })
   use({ "tpope/vim-unimpaired", event = "BufWinEnter" })
-  use({ "machakann/vim-sandwich", event = "BufWinEnter" })
-  use({ "puremourning/vimspector", event = "BufWinEnter" })
   use({ "tyru/capture.vim", cmd = { "Capture" } })
 
   -- )))

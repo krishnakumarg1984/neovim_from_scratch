@@ -363,6 +363,10 @@ set shortmess-=x  " Uses [unix format], [dos format], [mac format] etc. instead 
 
 " )))
 
+if executable('nvr')
+  let $VISUAL="nvr -cc split --remote-wait +'set bufhidden=wipe'"
+endif
+
 ]])
 
 -- )))
