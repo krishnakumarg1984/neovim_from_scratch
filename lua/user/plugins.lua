@@ -72,11 +72,11 @@ return packer.startup(function(use)
 
   -- use({ "gauteh/vim-cppman", cmd = { "Cppman" } })
   use({ "jeffkreeftmeijer/vim-numbertoggle", event = "InsertEnter" })
-  use({ "lervag/vimtex" })
+  use({ "lervag/vimtex", ft = { "tex" } })
   use({ "ludovicchabant/vim-gutentags", event = "BufWinEnter" })
   use({ "machakann/vim-sandwich", event = "BufWinEnter" })
   use({ "petRUShka/vim-opencl" })
-  use({ "puremourning/vimspector", event = "BufWinEnter" })
+  use({ "puremourning/vimspector", event = "BufWinEnter", disable = true })
   use({ "sgur/vim-editorconfig", event = "BufWinEnter" })
   use({ "tpope/vim-repeat", event = "BufWinEnter" })
   use({ "tpope/vim-unimpaired", event = "BufWinEnter" })
@@ -101,7 +101,7 @@ return packer.startup(function(use)
   use("antoinemadec/FixCursorHold.nvim") -- This is needed to fix lsp doc highlight
   use("folke/which-key.nvim")
   use("luukvbaal/stabilize.nvim")
-  use("folke/todo-comments.nvim") -- :ToDoQuickFix, :ToDoTrouble, :ToDoTelescope,
+  use({ "folke/todo-comments.nvim", event = "InsertEnter" }) -- :ToDoQuickFix, :ToDoTrouble, :ToDoTelescope,
   -- TODO: do this today
   -- HACK: This is just a hack
   -- FIX: this needs fix
@@ -131,35 +131,38 @@ return packer.startup(function(use)
 
   -- cmp plugins (((
 
-  use("hrsh7th/nvim-cmp") -- The completion plugin
-  use("hrsh7th/cmp-buffer") -- buffer completions
-  use("hrsh7th/cmp-path") -- path completions
-  use("hrsh7th/cmp-cmdline") -- cmdline completions
-  use("saadparwaiz1/cmp_luasnip") -- snippet completions
-  use("hrsh7th/cmp-nvim-lsp")
-  use("hrsh7th/cmp-nvim-lua")
+  use({ "hrsh7th/nvim-cmp" }) -- The completion plugin
+  use({ "hrsh7th/cmp-buffer" }) -- buffer completions
+  use({ "hrsh7th/cmp-path" }) -- path completions
+  use({ "hrsh7th/cmp-cmdline" }) -- cmdline completions
+  use({ "saadparwaiz1/cmp_luasnip" }) -- snippet completions
+  use({ "hrsh7th/cmp-nvim-lsp" }) -- , event = "InsertEnter" })
+  use({ "hrsh7th/cmp-nvim-lua" })
   -- use("andersevenrud/cmp-tmux")
+  use({ "quangnguyen30192/cmp-nvim-tags" })
   use({
     "f3fora/cmp-nuspell",
     rocks = { "lua-nuspell" },
     ft = { "text", "markdown", "rmd", "gitcommit", "mail", "tex", "rst", "asciidoc" },
+    -- event = "InsertEnter",
   })
   use({
     "f3fora/cmp-spell",
     ft = { "text", "markdown", "rmd", "gitcommit", "mail", "tex", "rst", "asciidoc" },
+    -- event = "InsertEnter",
   })
   use({
     "octaltree/cmp-look",
     ft = { "text", "markdown", "rmd", "gitcommit", "mail", "tex", "rst", "asciidoc" },
+    -- event = "InsertEnter",
   })
-  use("quangnguyen30192/cmp-nvim-tags")
 
   -- )))
 
   -- snippets (((
 
-  use("L3MON4D3/LuaSnip") -- snippet engine
-  use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
+  use({ "L3MON4D3/LuaSnip" }) -- snippet engine
+  use({ "rafamadriz/friendly-snippets" }) -- a bunch of snippets to use
 
   -- )))
 
@@ -172,13 +175,14 @@ return packer.startup(function(use)
   -- use("tamago324/nlsp-settings.nvim") -- language server settings defined in json for
   use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
   use("kosayoda/nvim-lightbulb")
-  use("tami5/lspsaga.nvim")
+  use({ "tami5/lspsaga.nvim", event = "InsertEnter" })
   use("folke/trouble.nvim")
   use({
     "ray-x/lsp_signature.nvim",
     requires = "kyazdani42/nvim-web-devicons",
+    event = { "InsertEnter" },
   })
-  use("onsails/lspkind-nvim")
+  -- use("onsails/lspkind-nvim")
   use({ "stevearc/aerial.nvim" })
   use({ "rmagatti/goto-preview" })
   use("https://gitlab.com/yorickpeterse/nvim-dd")
@@ -198,6 +202,7 @@ return packer.startup(function(use)
       { "nvim-lua/popup.nvim" },
       { "nvim-lua/plenary.nvim" },
     },
+    cmd = { "CheatSheet", "CheatSheetEdit" },
   })
   -- )))
   -- octo.nvim ((( -- or  nvim-telescope / telescope-github.nvim
@@ -257,10 +262,24 @@ return packer.startup(function(use)
   -- AsyncTask and AsyncRun (((
 
   use({
+    "skywind3000/asyncrun.vim",
+    cmd = {
+      "AsyncRun!",
+      "AsyncRun",
+      "AsyncStop!",
+      "AsyncStop",
+    },
+  })
+
+  use({
     "skywind3000/asynctasks.vim",
-    requires = { "skywind3000/asyncrun.vim" },
-    -- cmd = { "AsyncTask", "AsyncTaskMacro", "AsyncTaskList", "AsyncTaskEdit", "AsyncRun", "AsyncStop" },
-    -- ft = { "cpp" },
+    cmd = {
+      "AsyncTask",
+      "AsyncTaskEdit!",
+      "AsyncTaskEdit",
+      "AsyncTaskList",
+      "AsyncTaskMacro",
+    },
   })
 
   -- )))
