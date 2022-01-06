@@ -51,7 +51,12 @@ aerial.setup({
   placement_editor_edge = true,
   close_behavior = "global",
   open_automatic = function(bufnr)
-    return not aerial.was_closed()
+    -- Enforce a minimum line count
+    return vim.api.nvim_buf_line_count(bufnr) > 26
+      -- Enforce a minimum symbol count
+      and aerial.num_symbols(bufnr) > 4
+      -- A useful way to keep aerial closed when closed manually
+      and not aerial.was_closed()
   end,
 })
 
