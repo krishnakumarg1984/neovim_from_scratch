@@ -214,6 +214,7 @@ return packer.startup(function(use)
       "nvim-telescope/telescope.nvim",
       "kyazdani42/nvim-web-devicons",
     },
+    cmd = { "Octo" },
   })
   -- )))
   -- telescope-fzf-native (((
