@@ -118,6 +118,7 @@ return packer.startup(function(use)
   use({ "chentau/marks.nvim" })
   use({ "klen/nvim-config-local" })
   -- use({ "blackCauldron7/surround.nvim" })
+  use({ "ellisonleao/glow.nvim", cmd = { "Glow", "GlowInstall" } })
 
   -- )))
 
