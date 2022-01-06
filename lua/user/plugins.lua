@@ -202,7 +202,7 @@ return packer.startup(function(use)
       { "nvim-lua/popup.nvim" },
       { "nvim-lua/plenary.nvim" },
     },
-    cmd = { "CheatSheet", "CheatSheetEdit" },
+    cmd = { "Cheatsheet", "CheatsheetEdit" },
   })
   -- )))
   -- octo.nvim ((( -- or  nvim-telescope / telescope-github.nvim
