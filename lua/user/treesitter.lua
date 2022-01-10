@@ -49,7 +49,8 @@ configs.setup({
   highlight = {
     enable = true, -- false will disable the whole extension
     disable = { "" }, -- list of language that will be disabled
-    additional_vim_regex_highlighting = true,
+    use_languagetree = true,
+    -- additional_vim_regex_highlighting = false,
   },
   refactor = {
     highlight_definitions = { enable = true },
