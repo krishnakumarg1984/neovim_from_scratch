@@ -101,7 +101,7 @@ return packer.startup(function(use)
   use("antoinemadec/FixCursorHold.nvim") -- This is needed to fix lsp doc highlight
   use("folke/which-key.nvim")
   use("luukvbaal/stabilize.nvim")
-  use({ "folke/todo-comments.nvim", event = "InsertEnter" }) -- :ToDoQuickFix, :ToDoTrouble, :ToDoTelescope,
+  use({ "folke/todo-comments.nvim" }) -- :ToDoQuickFix, :ToDoTrouble, :ToDoTelescope,
   -- TODO: do this today
   -- HACK: This is just a hack
   -- FIX: this needs fix
@@ -137,7 +137,7 @@ return packer.startup(function(use)
   use({ "hrsh7th/cmp-path" }) -- path completions
   use({ "hrsh7th/cmp-cmdline" }) -- cmdline completions
   use({ "saadparwaiz1/cmp_luasnip" }) -- snippet completions
-  use({ "hrsh7th/cmp-nvim-lsp" }) -- , event = "InsertEnter" })
+  use({ "hrsh7th/cmp-nvim-lsp" })
   use({ "hrsh7th/cmp-nvim-lua" })
   -- use("andersevenrud/cmp-tmux")
   use({ "quangnguyen30192/cmp-nvim-tags" })
@@ -145,17 +145,14 @@ return packer.startup(function(use)
     "f3fora/cmp-nuspell",
     rocks = { "lua-nuspell" },
     ft = { "text", "markdown", "rmd", "gitcommit", "mail", "tex", "rst", "asciidoc" },
-    -- event = "InsertEnter",
   })
   use({
     "f3fora/cmp-spell",
     ft = { "text", "markdown", "rmd", "gitcommit", "mail", "tex", "rst", "asciidoc" },
-    -- event = "InsertEnter",
   })
   use({
     "octaltree/cmp-look",
     ft = { "text", "markdown", "rmd", "gitcommit", "mail", "tex", "rst", "asciidoc" },
-    -- event = "InsertEnter",
   })
 
   -- )))
@@ -176,12 +173,12 @@ return packer.startup(function(use)
   -- use("tamago324/nlsp-settings.nvim") -- language server settings defined in json for
   use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
   use("kosayoda/nvim-lightbulb")
-  use({ "tami5/lspsaga.nvim", event = "InsertEnter" })
+  use({ "tami5/lspsaga.nvim" }) -- , event = "InsertEnter" })
   use("folke/trouble.nvim")
   use({
     "ray-x/lsp_signature.nvim",
     requires = "kyazdani42/nvim-web-devicons",
-    event = { "InsertEnter" },
+    -- event = { "InsertEnter" },
   })
   -- use("onsails/lspkind-nvim")
   use({ "stevearc/aerial.nvim" })
