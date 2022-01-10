@@ -206,6 +206,14 @@ if not status_ok then
   return
 end
 
+local status_ok, mylspconfig = pcall(require, "lspconfig")
+if not status_ok then
+  return
+end
+
+capabilities.offsetEncoding = { "utf-16" }
+mylspconfig.clangd.setup({ capabilities = capabilities })
+
 M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
 
 -- )))
