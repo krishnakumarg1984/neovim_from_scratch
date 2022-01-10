@@ -60,17 +60,22 @@ end
 
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
 local servers = {
-  -- "ansiblels",
   "bashls",
   "c",
   "clangd",
   "cmake",
+  "dockerls",
+  "dotls",
+  "esbonio",
+  "fortls",
+  "ltex",
   "pyright",
   "sumneko_lua",
   "texlab",
   "vimls",
   "yamlls",
   "zk",
+  -- "ansiblels",
 }
 
 -- setup the LS
