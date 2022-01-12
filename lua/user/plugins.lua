@@ -120,6 +120,7 @@ return packer.startup(function(use)
   -- use({ "blackCauldron7/surround.nvim" })
   use({ "ellisonleao/glow.nvim", cmd = { "Glow", "GlowInstall" } })
   use({ "petertriho/nvim-scrollbar" })
+  use({ "anuvyklack/pretty-fold.nvim" })
 
   -- )))
 
