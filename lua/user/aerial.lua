@@ -60,8 +60,8 @@ aerial.setup({
   end,
 })
 
-vim.cmd([[
-    augroup _aerialFiletype
-    autocmd!
-    autocmd filetype aerial setlocal nolist
-  ]])
+-- vim.cmd([[
+--     augroup _aerialFiletype
+--     autocmd!
+--     autocmd filetype aerial setlocal nolist
+--   ]])
