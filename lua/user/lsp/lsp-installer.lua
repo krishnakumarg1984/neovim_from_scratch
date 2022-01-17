@@ -69,6 +69,7 @@ local servers = {
   "esbonio",
   "fortls",
   "ltex",
+  "opencl_ls",
   "pyright",
   "sumneko_lua",
   "texlab",
