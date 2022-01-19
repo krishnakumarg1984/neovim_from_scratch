@@ -26,7 +26,7 @@ configs.setup({
     "jsonc",
     "julia",
     "latex",
-    "lua",
+    -- "lua",
     "make",
     "markdown",
     "perl",
