@@ -71,7 +71,7 @@ local servers = {
   -- "dotls", -- requires nodejs
   "esbonio",
   "fortls",
-  "ltex", -- slow to install on remote systems
+  -- "ltex", -- slow to install on remote systems
   "opencl_ls",
   -- "pyright", -- requires nodejs
   "sumneko_lua",
