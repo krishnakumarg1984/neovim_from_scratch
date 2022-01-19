@@ -49,11 +49,14 @@ end)
 
 local function install_server(server)
   local lsp_installer_servers = require("nvim-lsp-installer.servers")
-  local ok, server_analyzer = lsp_installer_servers.get_server(server)
-  if ok then
-    if not server_analyzer:is_installed() then
+  -- local ok, server_analyzer = lsp_installer_servers.get_server(server)
+  local server_available, requested_server = lsp_installer_servers.get_server(server)
+  if server_available then
+    if not requested_server:is_installed() then
+      -- Queue the server to be installed
+      requested_server:install()
       -- server_analyzer:install(server) -- will install in background
-      lsp_installer.install(server) -- install window will popup
+      -- lsp_installer.install(server) -- install window will popup
     end
   end
 end
