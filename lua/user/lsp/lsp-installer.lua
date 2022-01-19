@@ -60,21 +60,21 @@ end
 
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
 local servers = {
-  "bashls",
+  -- "bashls", -- requires nodejs
   "c",
   "clangd",
   "cmake",
-  "dockerls",
-  "dotls",
+  -- "dockerls",  -- requires nodejs
+  -- "dotls", -- requires nodejs
   "esbonio",
   "fortls",
   "ltex",
   "opencl_ls",
-  "pyright",
+  "pyright", -- requires nodejs
   "sumneko_lua",
   "texlab",
-  "vimls",
-  "yamlls",
+  -- "vimls", -- requires nodejs
+  -- "yamlls", -- requires nodejs
   "zk",
   -- "ansiblels",
 }
