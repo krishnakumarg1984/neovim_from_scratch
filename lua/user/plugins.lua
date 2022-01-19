@@ -17,6 +17,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
     install_path,
   })
   print("Installing packer: close and reopen Neovim...")
+  print("If you get errors after reopening, run :PackerInstall to install missing plugins")
   vim.cmd([[packadd packer.nvim]])
 end
 
