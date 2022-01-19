@@ -6,19 +6,36 @@ if not status_ok then
 end
 
 comment.setup({
+  ---@param ctx Ctx
   pre_hook = function(ctx)
-    local U = require("Comment.utils")
+    -- Only calculate commentstring for tsx filetypes
+    if vim.bo.filetype == "typescriptreact" then
+      local U = require("Comment.utils")
 
-    local location = nil
-    if ctx.ctype == U.ctype.block then
-      location = require("ts_context_commentstring.utils").get_cursor_location()
-    elseif ctx.cmotion == U.cmotion.v or ctx.cmotion == U.cmotion.V then
-      location = require("ts_context_commentstring.utils").get_visual_start_location()
+      -- Determine whether to use linewise or blockwise commentstring
+      local type = ctx.ctype == U.ctype.line and "__default" or "__multiline"
+
+      -- Determine the location where to calculate commentstring from
+      local location = nil
+      local ts_cs_utils_status_ok, ts_context_commentstring_utils = pcall(require, "ts_context_commentstring.utils")
+      if ts_cs_utils_status_ok then
+        if ctx.ctype == U.ctype.block then
+          location = ts_context_commentstring_utils.get_cursor_location()
+        elseif ctx.cmotion == U.cmotion.v or ctx.cmotion == U.cmotion.V then
+          location = ts_context_commentstring_utils.get_visual_start_location()
+        end
+      end
+
+      local ts_cs_internal_status_ok, ts_context_commentstring_internal = pcall(
+        require,
+        "ts_context_commentstring.internal"
+      )
+      if ts_cs_internal_status_ok then
+        return ts_context_commentstring_internal.calculate_commentstring({
+          key = type,
+          location = location,
+        })
+      end
     end
-
-    return require("ts_context_commentstring.internal").calculate_commentstring({
-      key = ctx.ctype == U.ctype.line and "__default" or "__multiline",
-      location = location,
-    })
   end,
 })
