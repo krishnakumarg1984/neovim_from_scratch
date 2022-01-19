@@ -211,8 +211,9 @@ if not status_ok then
   return
 end
 
-capabilities.offsetEncoding = { "utf-16" }
-mylspconfig.clangd.setup({ capabilities = capabilities })
+-- https://github.com/williamboman/nvim-lsp-installer/issues/305
+-- capabilities.offsetEncoding = { "utf-16" }
+-- mylspconfig.clangd.setup({ capabilities = capabilities })
 
 M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
 
