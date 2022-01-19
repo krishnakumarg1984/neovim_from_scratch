@@ -70,7 +70,7 @@ local servers = {
   "fortls",
   "ltex",
   "opencl_ls",
-  "pyright", -- requires nodejs
+  -- "pyright", -- requires nodejs
   "sumneko_lua",
   "texlab",
   -- "vimls", -- requires nodejs
