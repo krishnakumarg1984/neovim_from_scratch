@@ -1,4 +1,4 @@
--- vim: foldmarker=(((,))):foldmethod=marker:foldlevel=0:shiftwidth=2:softtabstop=2:tabstop=2
+-- vim: foldmarker=(((,))):foldmethod=marker:foldlevelstart=0:shiftwidth=2:softtabstop=2:tabstop=2
 
 -- Boilerplate for packer automation (((
 
@@ -82,6 +82,7 @@ return packer.startup(function(use)
   use({ "tpope/vim-repeat", event = "BufWinEnter" })
   use({ "tpope/vim-unimpaired", event = "BufWinEnter" })
   use({ "tyru/capture.vim", cmd = { "Capture" } })
+  use({ "ilyachur/cmake4vim", ft = { "cmake" } })
 
   -- )))
 
@@ -122,6 +123,7 @@ return packer.startup(function(use)
   use({ "ellisonleao/glow.nvim", cmd = { "Glow", "GlowInstall" } })
   use({ "petertriho/nvim-scrollbar" })
   use({ "anuvyklack/pretty-fold.nvim" })
+  -- use({ "mfussenegger/nvim-lint" })
 
   -- )))
 
