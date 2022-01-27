@@ -421,7 +421,7 @@ local options = {
 
   -- All other settings (((
 
-  clipboard = "unnamedplus", -- allows neovim to access the system clipboard
+  -- clipboard = "unnamedplus", -- allows neovim to access the system clipboard
   cmdheight = 2, -- more space in the neovim command line for displaying messages. Height of command-line (easy-readable). Better display for messages.
   colorcolumn = "121", -- Display text width column
   completeopt = { "menuone", "noselect" }, -- mostly just for cmp
