@@ -267,12 +267,12 @@ return packer.startup(function(use)
 
   use({
     "skywind3000/asyncrun.vim",
-    cmd = {
-      "AsyncRun!",
-      "AsyncRun",
-      "AsyncStop!",
-      "AsyncStop",
-    },
+    -- cmd = {
+    --   "AsyncRun!",
+    --   "AsyncRun",
+    --   "AsyncStop!",
+    --   "AsyncStop",
+    -- },
   })
 
   use({
