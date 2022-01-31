@@ -124,6 +124,7 @@ return packer.startup(function(use)
   use({ "petertriho/nvim-scrollbar" })
   use({ "anuvyklack/pretty-fold.nvim" })
   -- use({ "mfussenegger/nvim-lint" })
+  -- use({ "chipsenkbeil/distant.nvim" })
 
   -- )))
 
