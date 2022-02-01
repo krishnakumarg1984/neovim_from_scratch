@@ -83,6 +83,17 @@ local opts = {
 local mappings = {
   ["/"] = { '<cmd>lua require("Comment.api").toggle_current_linewise()<CR>', "Comment" },
   -- ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
+  a = {
+    name = "Code Outline",
+    a = { "<cmd>AerialToggle!<cr>", "Toggle Outline" },
+    c = { "<cmd>AerialClose<cr> | let g:aerial_open_automatic = 0<cr>", "Close Outline" },
+    d = { "<cmd>AerialNextUp<cr>", "Next Symbol (up 1 level)" },
+    n = { "<cmd>AerialNext<cr>", "Next Symbol" },
+    o = { "<cmd>AerialOpen!<cr> | let g:aerial_open_automatic = 1<cr>", "Open Outline" },
+    p = { "<cmd>AerialPrev<cr>", "Prev Symbol" },
+    t = { "<cmd>AerialToggle!<cr>", "Toggle Outline" },
+    u = { "<cmd>AerialPrevUp<cr>", "Prev Symbol (up 1 level)" },
+  },
   ["b"] = {
     -- "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
     "<cmd>Telescope buffers<cr>",
