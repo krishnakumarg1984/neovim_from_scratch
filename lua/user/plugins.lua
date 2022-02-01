@@ -91,7 +91,16 @@ return packer.startup(function(use)
   use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
   use("numToStr/Comment.nvim") -- Easily comment stuff
   use("kyazdani42/nvim-web-devicons")
-  use("kyazdani42/nvim-tree.lua")
+  -- use("kyazdani42/nvim-tree.lua")
+  use({
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v1.x",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+    },
+  })
   use("akinsho/bufferline.nvim")
   use({ "famiu/bufdelete.nvim", cmd = { "Bdelete", "Bwipeout" } })
   use("nvim-lualine/lualine.nvim")
@@ -125,6 +134,10 @@ return packer.startup(function(use)
   use({ "anuvyklack/pretty-fold.nvim" })
   -- use({ "mfussenegger/nvim-lint" })
   -- use({ "chipsenkbeil/distant.nvim" })
+  -- use({ "nyngwang/NeoZoom.lua" })
+  use({ "svban/YankAssassin.vim" })
+  use({ "winston0410/range-highlight.nvim", requires = "winston0410/cmd-parser.nvim" })
+  use("j-hui/fidget.nvim")
 
   -- )))
 
@@ -177,7 +190,12 @@ return packer.startup(function(use)
   use("neovim/nvim-lspconfig") -- enable LSP
   use("williamboman/nvim-lsp-installer") -- simple to use language server installer
   -- use("tamago324/nlsp-settings.nvim") -- language server settings defined in json for
-  use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
+  -- use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
+  use({
+    "jose-elias-alvarez/null-ls.nvim",
+    -- requires = "PlatyPew/format-installer.nvim",
+    after = "nvim-lspconfig", -- To prevent null-ls from failing to read buffer
+  })
   use("kosayoda/nvim-lightbulb")
   use({ "tami5/lspsaga.nvim" }) -- , event = "InsertEnter" })
   use("folke/trouble.nvim")
@@ -438,15 +456,15 @@ google keep (proprietary)
 -- -- session-lens and auto-session (((
 
 -- use({
--- 	"rmagatti/auto-session",
--- 	requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
--- 	config = function()
--- 		require("auto-session").setup({--[[your custom config--]]
--- 			-- path_display = { "shorten" },
--- 			-- theme_conf = { border = false },
--- 			-- previewer = true,
--- 		})
--- 	end,
+--  "rmagatti/auto-session",
+--  requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+--  config = function()
+--    require("auto-session").setup({--[[your custom config--]]
+--      -- path_display = { "shorten" },
+--      -- theme_conf = { border = false },
+--      -- previewer = true,
+--    })
+--  end,
 -- })
 
 -- -- )))
@@ -457,5 +475,12 @@ google keep (proprietary)
 -- }
 -- https://github.com/TC72/telescope-tele-tabby.nvim
 -- https://github.com/tpope/vim-apathy
+-- https://github.com/elihunter173/dirbuf.nvim
+-- https://github.com/marklcrns/vim-smartq
+-- https://github.com/svermeulen/vim-subversive
+-- https://github.com/svermeulen/vim-subversive
+-- https://github.com/abecodes/tabout.nvim
+-- https://github.com/Pocco81/MerelyFmt.nvim/tree/dev
+-- https://github.com/Julian/vim-textobj-variable-segment
 
 -- )))

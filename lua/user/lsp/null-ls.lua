@@ -5,6 +5,60 @@ if not null_ls_status_ok then
   return
 end
 
+-- local formatter_install_status_ok, formatter_install = pcall(require, "format-installer")
+-- if not formatter_install_status_ok then
+--   return
+-- end
+
+-- formatter_install.setup({
+--   -- change path to suit your needs
+--   installation_path = vim.fn.stdpath("data") .. "/formatters/",
+-- })
+
+-- -- Custom configs to pass
+-- local custom_configs = {
+--   -- clang_format = {
+--   --   extra_args = {
+--   --     "--style",
+--   --     "{IndentWidth: 4, PointerAlignment: Left, ColumnLimit: 100, AllowShortFunctionsOnASingleLine: Empty}",
+--   --   },
+--   -- },
+--   -- prettier = {
+--   --   extra_args = {
+--   --     "--tab-width=4",
+--   --     "--print-width=100",
+--   --   },
+--   -- },
+--   -- stylua = {
+--   --   extra_args = {
+--   --     "--column-width=100",
+--   --     "--indent-type=Spaces",
+--   --   },
+--   -- },
+--   -- yapf = {
+--   --   extra_args = {
+--   --     "--style",
+--   --     "{column_limit:100}",
+--   --   },
+--   -- },
+-- }
+
+-- local sources = {}
+-- for _, formatter in ipairs(formatter_install.get_installed_formatters()) do
+--   local config = { command = formatter.cmd }
+--   if custom_configs[formatter.name] ~= nil then
+--     config.extra_args = custom_configs[formatter.name].extra_args
+--   end
+--   table.insert(sources, null_ls.builtins.formatting[formatter.name].with(config))
+-- end
+
+-- Optional: Additional formatters/diagnostics that are not included
+-- This just uses the null-ls defaults
+-- table.insert(
+--     sources,
+--     null_ls.builtins.code_actions.gitsigns,
+-- )
+
 vim.g.null_ls_disable = true
 
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
