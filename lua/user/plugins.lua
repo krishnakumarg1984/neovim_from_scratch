@@ -83,6 +83,7 @@ return packer.startup(function(use)
   use({ "tpope/vim-unimpaired", event = "BufWinEnter" })
   use({ "tyru/capture.vim", cmd = { "Capture" } })
   use({ "ilyachur/cmake4vim", ft = { "cmake" } })
+  use({ "dense-analysis/ale" })
 
   -- )))
 

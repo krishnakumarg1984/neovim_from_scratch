@@ -3,6 +3,8 @@
 -- Vimscript-style settings (((
 vim.cmd([[
 
+let g:ale_disable_lsp = 1
+
 set iskeyword+=-
 
 colorscheme morning
