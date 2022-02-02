@@ -46,6 +46,7 @@ end
 -- Have packer use a popup window (((
 
 packer.init({
+  compile_path = vim.fn.stdpath('config')..'/lua/user/packer_compiled.lua',
   display = {
     open_fn = function()
       return require("packer.util").float({ border = "rounded" })
@@ -77,13 +78,15 @@ return packer.startup(function(use)
   use({ "ludovicchabant/vim-gutentags", event = "BufWinEnter" })
   use({ "machakann/vim-sandwich", event = "BufWinEnter" })
   use({ "petRUShka/vim-opencl" })
-  use({ "puremourning/vimspector", event = "BufWinEnter", disable = false })
+  use({ "puremourning/vimspector", fn = "vimspector#Launch", disable = false })
   use({ "sgur/vim-editorconfig", event = "BufWinEnter" })
   use({ "tpope/vim-repeat", event = "BufWinEnter" })
-  use({ "tpope/vim-unimpaired", event = "BufWinEnter" })
+  -- use({ "tpope/vim-unimpaired", event = "BufWinEnter" })  -- too slow (based on profiling)
   use({ "tyru/capture.vim", cmd = { "Capture" } })
   use({ "ilyachur/cmake4vim", ft = { "cmake" } })
   use({ "dense-analysis/ale" })
+  -- use({ "dstein64/vim-startuptime" })
+  use({ "tweekmonster/startuptime.vim" })
 
   -- )))
 
