@@ -5,4 +5,6 @@ if not status_ok then
   return
 end
 
-impatient.enable_profile()
+-- impatient.enable_profile()
+local packer_compiled_status_ok, packer_compiled = pcall(require, "packer_compiled")
+
