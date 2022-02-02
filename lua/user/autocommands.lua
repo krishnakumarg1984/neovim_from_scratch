@@ -85,7 +85,7 @@ vim.cmd([[
 
   augroup _julia
       autocmd!
-      autocmd VimEnter,BufRead,BufNewFile *.jl set filetype=julia
+      autocmd BufRead,BufNewFile *.jl set filetype=julia
   augroup END
 
   " )))
