@@ -7,7 +7,7 @@ let g:ale_disable_lsp = 1
 
 set iskeyword+=-
 
-colorscheme morning
+" colorscheme morning
 set backupdir-=.
 set whichwrap+=<,>,[,],h,l
 
@@ -101,6 +101,7 @@ command! -nargs=? Underline call s:Underline(<q-args>)
   let g:did_install_default_menus = 1
   let g:did_install_syntax_menu   = 1
   let g:did_indent_on             = 1
+  let g:do_filetype_lua           = 1
   let g:did_load_filetypes        = 1
   let g:did_load_ftplugin         = 1
   let g:skip_loading_mswin        = 1
@@ -115,7 +116,7 @@ command! -nargs=? Underline call s:Underline(<q-args>)
   let g:loaded_logiPat            = 1
   let g:loaded_logipat            = 1
   
-  " let g:loaded_man                = 1
+  let g:loaded_man                = 1
   let g:loaded_matchit            = 1
   let g:loaded_matchparen         = 1
 
@@ -158,6 +159,8 @@ command! -nargs=? Underline call s:Underline(<q-args>)
   let g:r_syntax_folding        = 1
   let g:rust_fold               = 1
   let g:php_folding             = 1
+
+  let g:cursorhold_updatetime   = 100
 
   " )))
 
@@ -316,6 +319,8 @@ if executable('nvr')
   let $VISUAL="nvr -cc split --remote-wait +'set bufhidden=wipe'"
   let $GIT_EDITOR = "nvr -cc split --remote-wait +'set bufhidden=wipe'"
 endif
+
+set tags=~/.cache/tags
 
 ]])
 

@@ -1,8 +1,6 @@
 -- vim: foldmarker=(((,))):foldmethod=marker:foldlevel=0:shiftwidth=2:softtabstop=2:tabstop=2
 
--- vim: ft=vim:foldmarker=(((,))):foldmethod=marker:foldlevel=0:shiftwidth=2:softtabstop=2:tabstop=2
-
-vim.cmd([[
+vim.cmd [[
 
   " https://vimways.org/2018/formatting-lists-with-vim/
   " function! EmptyBuffer()
@@ -71,13 +69,13 @@ vim.cmd([[
 
   " Autocommand to set commentstring for various buffer types (((
 
-  augroup _setcommentstring
-    autocmd!
-    autocmd BufEnter,BufFilePost *.cpp,*.h setlocal commentstring=//\ %s
+  " augroup _setcommentstring
+  "   autocmd!
+  "   autocmd BufEnter,BufFilePost *.cpp,*.h setlocal commentstring=//\ %s
 
-    " https://github.com/tpope/vim-commentary/issues/85
-    autocmd FileType xdefaults setlocal commentstring=!\ %s
-  augroup END
+  "   " https://github.com/tpope/vim-commentary/issues/85
+  "   autocmd FileType xdefaults setlocal commentstring=!\ %s
+  " augroup END
 
   " )))
 
@@ -134,4 +132,4 @@ vim.cmd([[
   augroup END
   " )))
 
-]])
+]]

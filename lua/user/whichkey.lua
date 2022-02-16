@@ -185,14 +185,14 @@ local mappings = {
 
   T = {
     name = "Terminal",
-    f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
-    h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
-    n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
-    p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
-    t = { "<cmd>ToggleTerm direction=tab<cr>", "Tab" },
-    T = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
-    u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
-    v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
+    f = { "<cmd>ToggleTerm direction=float<cr>", "Toggle a floating terminal" },
+    h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Toggle a horizontal terminal" },
+    -- n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
+    p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Toggle a python terminal" },
+    t = { "<cmd>ToggleTerm direction=tab<cr>", "Toggle a terminal in tab" },
+    T = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Toggle htop in floating terminal" },
+    -- u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
+    v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Toggle a vertical terminal" },
   },
 
   t = {

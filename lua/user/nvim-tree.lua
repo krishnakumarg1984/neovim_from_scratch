@@ -22,6 +22,7 @@ vim.g.nvim_tree_icons = {
     symlink = "",
   },
 }
+vim.g.nvim_tree_respect_buf_cwd = 1
 
 local status_ok, nvim_tree = pcall(require, "nvim-tree")
 if not status_ok then

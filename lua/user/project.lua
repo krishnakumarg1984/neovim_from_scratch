@@ -4,6 +4,7 @@ local status_ok, project = pcall(require, "project_nvim")
 if not status_ok then
   return
 end
+
 project.setup({
   ---@usage set to false to disable project.nvim.
   --- This is on by default since it's currently the expected behavior.
@@ -32,7 +33,7 @@ project.setup({
 
   ---@usage When set to false, you will get a message when project.nvim changes your directory.
   -- When set to false, you will get a message when project.nvim changes your directory.
-  silent_chdir = true,
+  silent_chdir = false,
 
   ---@usage list of lsp client names to ignore when using **lsp** detection. eg: { "efm", ... }
   ignore_lsp = {},
@@ -42,9 +43,9 @@ project.setup({
   datapath = vim.fn.stdpath("data"),
 })
 
-local tele_status_ok, telescope = pcall(require, "telescope")
-if not tele_status_ok then
-  return
-end
-
-telescope.load_extension("projects")
+-- local tele_status_ok, telescope = pcall(require, "telescope")
+-- if not tele_status_ok then
+--   return
+-- end
+-- 
+-- telescope.load_extension("projects")

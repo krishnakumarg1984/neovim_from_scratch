@@ -5,4 +5,11 @@ if not status_ok then
   return
 end
 
-pqf.setup({})
+pqf.setup({
+  signs = {
+    error = 'E',
+    warning = 'W',
+    info = 'I',
+    hint = 'H'
+  }
+})

@@ -1,6 +1,6 @@
 -- vim: foldmarker=(((,))):foldmethod=marker:foldlevel=0:shiftwidth=2:softtabstop=2:tabstop=2
 
-vim.cmd([[
+vim.cmd [[
 
 let g:ale_linters = {
 \   'c': ['clangtidy', 'cppcheck', 'cpplint', 'flawfinder'],
@@ -44,4 +44,9 @@ let g:ale_hover_to_floating_preview = 1
 let g:ale_floating_preview = 1
 let g:ale_detail_to_floating_preview = 1
 
-]])
+let g:ale_c_clangtidy_options='-Wno-unused-command-line-argument'
+let g:ale_cpp_clangtidy_options='-Wno-unused-command-line-argument'
+let g:ale_c_clangtidy_extra_options='-Wno-unused-command-line-argument'
+let g:ale_cpp_clangtidy_extra_options='-Wno-unused-command-line-argument'
+
+]]

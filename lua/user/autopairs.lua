@@ -1,6 +1,6 @@
 -- vim: foldmarker=(((,))):foldmethod=marker:foldlevel=0:shiftwidth=2:softtabstop=2:tabstop=2
 
--- Setup nvim-cmp.
+-- Setup nvim-autopairs
 local status_ok, npairs = pcall(require, "nvim-autopairs")
 if not status_ok then
   return

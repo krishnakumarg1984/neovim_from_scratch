@@ -1,9 +1,9 @@
 -- vim: foldmarker=(((,))):foldmethod=marker:foldlevel=0:shiftwidth=2:softtabstop=2:tabstop=2
 
-vim.cmd([[
+vim.cmd [[
   let g:asyncrun_rootmarks = ['.git', '.svn', '.root', '.project', '.hg', '_darcs', 'build.xml']
 
-  let g:asyncrun_open = 10
+  let g:asyncrun_open = 12
 
   noremap <silent><leader><leader>q :call asyncrun#quickfix_toggle(8)<cr>
 
@@ -36,4 +36,4 @@ vim.cmd([[
   " nnoremap <leader><leader>ma :AsyncRun -cwd=<root> make all <cr>
   " nnoremap <leader><leader>mr :AsyncRun -cwd=<root> make run <cr>
   " nnoremap <leader><leader>mc :AsyncRun -cwd=<root> make clean <cr>
-  ]])
+  ]]

@@ -5,7 +5,9 @@ if not status_ok then
   return
 end
 
-treesitter_context.setup({
+treesitter_context.setup {
+  enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
+  throttle = true, -- Throttles plugin updates (may improve performance)
   patterns = { -- Match patterns for TS nodes. These get wrapped to match at word boundaries.
     -- For all filetypes
     -- Note that setting an entry here replaces all other patterns for this entry.
@@ -27,4 +29,4 @@ treesitter_context.setup({
     --       'impl_item',
     --   },
   },
-})
+}

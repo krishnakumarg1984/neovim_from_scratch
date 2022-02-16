@@ -5,11 +5,15 @@ if not status_ok then
   return
 end
 
-pretty_fold.setup({})
+pretty_fold.setup{}
 
-local status_ok, pretty_fold_preview = pcall(require, "pretty-fold.preview")
-if not status_ok then
-  return
-end
+-- local status_ok, pretty_fold_preview = pcall(require, "pretty-fold.preview")
+-- if not status_ok then
+--   return
+-- end
 
-pretty_fold_preview.setup_keybinding("l")
+require('pretty-fold.preview').setup{
+   key = 'l', -- choose 'h' or 'l' key
+}
+
+-- pretty_fold_preview.setup_keybinding("l")
