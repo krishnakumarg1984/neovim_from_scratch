@@ -217,7 +217,7 @@ return packer.startup(function(use)
   -- -- })
   -- use { "akinsho/bufferline.nvim" }
   -- use { "kazhala/close-buffers.nvim", cmd = {} }
-  -- use { "nvim-lualine/lualine.nvim" }
+  use { "nvim-lualine/lualine.nvim" }
   use { "akinsho/toggleterm.nvim", cmd = { "ToggleTerm", "ToggleTermToggleAll", "TermExec" } }
   use { "lukas-reineke/indent-blankline.nvim" } -- slow plugin (try and restrict to a few filetypes)
   -- use { "luukvbaal/stabilize.nvim" }
@@ -292,6 +292,7 @@ return packer.startup(function(use)
   use { "rmagatti/goto-preview" }
   use { "stevearc/aerial.nvim" }
   use { "tami5/lspsaga.nvim" } -- , event = "InsertEnter" })
+  -- use { "ldelossa/litee-calltree.nvim", requires = { "ldelossa/litee.nvim" } }
 
   -- )))
 
