@@ -37,7 +37,7 @@ require "user.lightbulb"
 require "user.lsp_signature"
 require "user.goto_preview"
 require "user.aerial"
-
+require "user.nvim_cmake"
 -- require "user.litee"
 -- require "user.telescope"
 -- require "user.gitsigns"

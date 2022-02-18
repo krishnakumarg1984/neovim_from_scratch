@@ -4,7 +4,7 @@ vim.cmd [[
 
 let g:ale_linters = {
 \   'c': ['clangtidy', 'cppcheck', 'cpplint', 'flawfinder'],
-\   'cmake': ['cmakelint'],
+\   'cmake': ['cmake_lint', 'cmakelint'],
 \   'cpp': ['clangtidy', 'cppcheck', 'cpplint', 'flawfinder'],
 \}
 

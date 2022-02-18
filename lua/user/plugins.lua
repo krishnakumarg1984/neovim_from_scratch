@@ -149,37 +149,37 @@ return packer.startup(function(use)
     config = "vim.cmd[[ALEEnable]]",
   }
   use { "gauteh/vim-cppman", ft = { "c", "cpp" }, cmd = { "Cppman" } }
-  use {
-    "ilyachur/cmake4vim",
-    cmd = {
-      "CMake",
-      "CMakeResetAndReload",
-      "CMakeReset",
-      "CMakeBuild",
-      "CMakeSelectTarget",
-      "CMakeSelectBuildType",
-      "CMakeInfo",
-      "CMakeClean",
-      "CMakeCompileSource",
-      "CMakeRun",
-      "CMakeRun!",
-      "CTest",
-      "CTest!",
-      "CCMake",
-    },
-  }
+  -- use {
+  --   "ilyachur/cmake4vim",
+  --   cmd = {
+  --     "CMake",
+  --     "CMakeResetAndReload",
+  --     "CMakeReset",
+  --     "CMakeBuild",
+  --     "CMakeSelectTarget",
+  --     "CMakeSelectBuildType",
+  --     "CMakeInfo",
+  --     "CMakeClean",
+  --     "CMakeCompileSource",
+  --     "CMakeRun",
+  --     "CMakeRun!",
+  --     "CTest",
+  --     "CTest!",
+  --     "CCMake",
+  --   },
+  -- }
   use { "jeffkreeftmeijer/vim-numbertoggle", event = "InsertEnter" }
   use { "lervag/vimtex", ft = "tex" }
   use { "ludovicchabant/vim-gutentags" } -- , event = "BufWinEnter" }
   use { "machakann/vim-sandwich", keys = { "sa", "sr", "sd" } }
   use { "petRUShka/vim-opencl", ft = { "opencl" } }
-  use { "puremourning/vimspector", fn = "vimspector#Launch", disable = false }
+  -- use { "puremourning/vimspector", fn = "vimspector#Launch", disable = false }
   use { "svban/YankAssassin.vim" }
   use { "tpope/vim-repeat", event = "BufWinEnter" }
   use { "tyru/capture.vim", cmd = { "Capture" } }
 
-  -- use { "dstein64/vim-startuptime", cmd = {"StartupTime"} }
-  use { "tweekmonster/startuptime.vim", cmd = { "StartupTime" } }
+  use { "dstein64/vim-startuptime", cmd = { "StartupTime" } }
+  -- use { "tweekmonster/startuptime.vim", cmd = { "StartupTime" } }
 
   -- AsyncTask and AsyncRun (((
 
@@ -240,6 +240,7 @@ return packer.startup(function(use)
   use { "ellisonleao/glow.nvim", ft = { "md", "Rmd", "rmarkdown", "Rmarkdown" }, cmd = { "Glow", "GlowInstall" } }
   use { "anuvyklack/pretty-fold.nvim" }
   use { "winston0410/range-highlight.nvim", requires = "winston0410/cmd-parser.nvim" }
+  use { "Shatur/neovim-cmake", ft = { "c", "cpp", "cmake", "fortran" }, requires = { "mfussenegger/nvim-dap" } }
 
   --
   -- -- )))
