@@ -148,7 +148,7 @@ return packer.startup(function(use)
     cmd = "ALEEnable",
     config = "vim.cmd[[ALEEnable]]",
   }
-  use { "gauteh/vim-cppman", ft = { "c", "cpp" }, cmd = { "Cppman" } }
+  -- use { "gauteh/vim-cppman", ft = { "c", "cpp" }, cmd = { "Cppman" } }
   -- use {
   --   "ilyachur/cmake4vim",
   --   cmd = {
@@ -204,7 +204,7 @@ return packer.startup(function(use)
   use { "numToStr/Comment.nvim" } -- Easily comment stuff
   use { "ahmedkhalf/project.nvim" }
   use { "kyazdani42/nvim-web-devicons" }
-  -- use { "kyazdani42/nvim-tree.lua" }
+  use { "kyazdani42/nvim-tree.lua" }
   -- -- use({
   -- --   "nvim-neo-tree/neo-tree.nvim",
   -- --   branch = "v1.x",
