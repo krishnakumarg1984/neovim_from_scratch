@@ -25,7 +25,7 @@ treesitter_configs.setup {
     "json5",
     "jsonc",
     "julia",
-    "latex",
+    -- "latex",
     -- "lua",
     "make",
     "markdown",
