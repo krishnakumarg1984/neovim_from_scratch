@@ -73,7 +73,7 @@ end
 local servers = {
   -- "bashls", -- requires nodejs
   "c",
-  "clangd",
+  -- "clangd", -- requires a reasonably new version of glibc
   "cmake",
   -- "dockerls",  -- requires nodejs
   -- "dotls", -- requires nodejs
