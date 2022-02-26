@@ -88,6 +88,7 @@ return packer.startup(function(use)
   }
   use { "romgrk/nvim-treesitter-context", after = { "nvim-treesitter" } }
   use { "JoosepAlviste/nvim-ts-context-commentstring", after = { "nvim-treesitter" } }
+  use { "numToStr/Comment.nvim" } -- Easily comment stuff
   -- use( "mizlan/iswap.nvim", requires = { { "nvim-treesitter" } } )
   -- use { "folke/zen-mode.nvim", cmd = "ZenMode" }
   -- use { "folke/twilight.nvim", cmd = { "ZenMode", "Twilight", "TwilightEnable" } }
@@ -201,7 +202,6 @@ return packer.startup(function(use)
 
   use { "antoinemadec/FixCursorHold.nvim" } -- This is needed to fix lsp doc highlight
   use { "nathom/filetype.nvim" }
-  use { "numToStr/Comment.nvim" } -- Easily comment stuff
   use { "ahmedkhalf/project.nvim" }
   use { "kyazdani42/nvim-web-devicons" }
   use { "kyazdani42/nvim-tree.lua" }
@@ -231,7 +231,7 @@ return packer.startup(function(use)
   use { "karb94/neoscroll.nvim" }
   use { "kevinhwang91/nvim-hlslens", keys = { "/", "?", "q/", "q?", "*", "#", "g*", "g#" } }
   -- use { "https://gitlab.com/yorickpeterse/nvim-pqf", event = { "QuickFixCmdPre", "QuickFixCmdPost" } }
-  use { "https://gitlab.com/yorickpeterse/nvim-pqf" }
+  -- use { "https://gitlab.com/yorickpeterse/nvim-pqf" }
   -- use { "TimUntersberger/neogit", cmd = { "Neogit" } }
   -- -- use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" })
   -- use { "stevearc/dressing.nvim" }
@@ -288,7 +288,7 @@ return packer.startup(function(use)
   use { "folke/trouble.nvim" }
   use { "https://gitlab.com/yorickpeterse/nvim-dd" }
   use { "jose-elias-alvarez/null-ls.nvim" } -- for formatters and linters
-  use { "kosayoda/nvim-lightbulb" }
+  -- use { "kosayoda/nvim-lightbulb" }
   use { "ray-x/lsp_signature.nvim", requires = "kyazdani42/nvim-web-devicons" } -- event = { "InsertEnter" }, }
   use { "rmagatti/goto-preview" }
   use { "stevearc/aerial.nvim" }

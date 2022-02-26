@@ -14,8 +14,9 @@ set whichwrap+=<,>,[,],h,l
 
 " Linebreak settings (((
 
-let &showbreak='↪ '
-" showbreak=…,
+let &showbreak='→ '
+" let &showbreak='↪ '
+" let &showbreak='… '
 set breakat=\ \ ;:,!? " which characters might cause a line break if 'linebreak' is on.
 set breakindentopt=shift:2,sbr
 
@@ -180,7 +181,7 @@ set listchars+=tab:▸\     " Tab characters, preserve width
 set listchars+=trail:·    " Trailing spaces
 set listchars+=extends:>  " Unwrapped text to screen right
 set listchars+=precedes:< " Unwrapped text to screen left
-set listchars+=nbsp:+
+set listchars+=nbsp:␣
 
 " )))
 

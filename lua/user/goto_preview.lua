@@ -5,6 +5,8 @@ if not status_ok then
   return
 end
 
-goto_preview.setup({
-  default_mappings = true,
-})
+goto_preview.setup {
+  -- default_mappings = true,
+  -- resizing_mappings = false, -- Binds arrow keys to resizing the floating window.
+  dismiss_on_move = true, -- Dismiss the floating window when moving the cursor.
+}

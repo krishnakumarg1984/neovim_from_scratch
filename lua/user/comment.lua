@@ -5,12 +5,12 @@ if not status_ok then
   return
 end
 
-comment.setup({
-  ---@param ctx Ctx
+comment.setup {
+  ---@param ctx ctx
   pre_hook = function(ctx)
     -- Only calculate commentstring for tsx filetypes
     if vim.bo.filetype == "typescriptreact" then
-      local U = require("Comment.utils")
+      local U = require "Comment.utils"
 
       -- Determine whether to use linewise or blockwise commentstring
       local type = ctx.ctype == U.ctype.line and "__default" or "__multiline"
@@ -31,11 +31,11 @@ comment.setup({
         "ts_context_commentstring.internal"
       )
       if ts_cs_internal_status_ok then
-        return ts_context_commentstring_internal.calculate_commentstring({
+        return ts_context_commentstring_internal.calculate_commentstring {
           key = type,
           location = location,
-        })
+        }
       end
     end
   end,
-})
+}
