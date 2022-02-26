@@ -179,8 +179,8 @@ return packer.startup(function(use)
   use { "tpope/vim-repeat", event = "BufWinEnter" }
   use { "tyru/capture.vim", cmd = { "Capture" } }
 
-  use { "dstein64/vim-startuptime", cmd = { "StartupTime" } }
-  -- use { "tweekmonster/startuptime.vim", cmd = { "StartupTime" } }
+  -- use { "dstein64/vim-startuptime", cmd = { "StartupTime" } }
+  use { "tweekmonster/startuptime.vim", cmd = { "StartupTime" } }
 
   -- AsyncTask and AsyncRun (((
 
@@ -297,59 +297,60 @@ return packer.startup(function(use)
 
   -- )))
 
-  -- -- Telescope (((
-  --
-  -- use "nvim-telescope/telescope.nvim"
-  -- -- use("nvim-telescope/telescope-media-files.nvim")
-  -- -- use("nvim-telescope/telescope-packer.nvim")
-  -- -- cheatsheet.nvim (((
-  -- use {
-  --   "sudormrfbin/cheatsheet.nvim",
-  --   requires = {
-  --     { "nvim-telescope/telescope.nvim" },
-  --     { "nvim-lua/popup.nvim" },
-  --     { "nvim-lua/plenary.nvim" },
-  --   },
-  --   cmd = { "Cheatsheet", "CheatsheetEdit" },
-  -- }
-  -- -- )))
-  -- -- octo.nvim ((( -- or  nvim-telescope / telescope-github.nvim
-  -- use {
-  --   "pwntester/octo.nvim",
-  --   requires = {
-  --     "nvim-lua/plenary.nvim",
-  --     "nvim-telescope/telescope.nvim",
-  --     "kyazdani42/nvim-web-devicons",
-  --   },
-  --   cmd = { "Octo" },
-  -- }
-  -- -- )))
-  -- -- telescope-fzf-native (((
-  -- use {
-  --   "nvim-telescope/telescope-fzf-native.nvim",
-  --   run = "make",
-  --   requires = { { "nvim-telescope/telescope.nvim" }, { "nvim-lua/plenary.nvim" } },
-  -- }
-  -- -- )))
+  -- Telescope (((
+
+  use "nvim-telescope/telescope.nvim"
+  -- use("nvim-telescope/telescope-media-files.nvim")
+  -- use("nvim-telescope/telescope-packer.nvim")
+  -- cheatsheet.nvim (((
+  use {
+    "sudormrfbin/cheatsheet.nvim",
+    requires = {
+      { "nvim-telescope/telescope.nvim" },
+      { "nvim-lua/popup.nvim" },
+      { "nvim-lua/plenary.nvim" },
+    },
+    cmd = { "Cheatsheet", "CheatsheetEdit" },
+  }
+  -- )))
+  -- octo.nvim ((( -- or  nvim-telescope / telescope-github.nvim
+  use {
+    "pwntester/octo.nvim",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim",
+      "kyazdani42/nvim-web-devicons",
+    },
+    cmd = { "Octo" },
+  }
+  -- )))
+  -- telescope-fzf-native (((
+  use {
+    "nvim-telescope/telescope-fzf-native.nvim",
+    run = "make",
+    requires = { { "nvim-telescope/telescope.nvim" }, { "nvim-lua/plenary.nvim" } },
+  }
+  -- )))
   -- use {
   --   "crispgm/telescope-heading.nvim",
   --   requires = { { "nvim-telescope/telescope.nvim" }, { "nvim-lua/plenary.nvim" } },
   -- }
   -- use "nvim-telescope/telescope-symbols.nvim"
-  -- -- use({
-  -- --   "nvim-telescope/telescope-frecency.nvim",
-  -- --   requires = { "tami5/sqlite.lua" },
-  -- -- })
-  -- -- use("sQVe/sort.nvim")
-  --
-  use { "folke/which-key.nvim" }
-  -- -- )))
+  -- use({
+  --   "nvim-telescope/telescope-frecency.nvim",
+  --   requires = { "tami5/sqlite.lua" },
+  -- })
+  -- use("sQVe/sort.nvim")
 
-  -- -- Git (((
-  --
-  -- use "lewis6991/gitsigns.nvim"
-  --
-  -- -- )))
+  -- )))
+
+  -- Git (((
+
+  use "lewis6991/gitsigns.nvim"
+
+  -- )))
+
+  use { "folke/which-key.nvim" }
 
   -- )))
 

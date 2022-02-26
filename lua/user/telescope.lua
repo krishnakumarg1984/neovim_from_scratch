@@ -5,9 +5,9 @@ if not status_ok then
   return
 end
 
-local actions = require("telescope.actions")
+local actions = require "telescope.actions"
 
-telescope.setup({
+telescope.setup {
   defaults = {
 
     prompt_prefix = " ",
@@ -89,12 +89,12 @@ telescope.setup({
     -- builtin picker
   },
   extensions = {
-    media_files = {
-      -- filetypes whitelist
-      -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
-      filetypes = { "png", "webp", "jpg", "jpeg" },
-      find_cmd = "rg", -- find command (defaults to `fd`)
-    },
+    -- media_files = {
+    --   -- filetypes whitelist
+    --   -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
+    --   filetypes = { "png", "webp", "jpg", "jpeg" },
+    --   find_cmd = "rg", -- find command (defaults to `fd`)
+    -- },
     fzf = {
       fuzzy = true, -- false will only do exact matching
       override_generic_sorter = true, -- override the generic sorter
@@ -108,14 +108,14 @@ telescope.setup({
     -- }
     -- please take a look at the readme of the extension you want to configure
   },
-})
+}
 
-telescope.load_extension("aerial")
-telescope.load_extension("fzf")
-telescope.load_extension("heading")
--- telescope.load_extension("frecency")
+-- telescope.load_extension "aerial"
+telescope.load_extension "fzf"
 
 -- telescope.extensions.packer.plugins()
+-- telescope.load_extension("frecency")
+-- telescope.load_extension("heading")
 -- telescope.load_extension("mapper")
 -- telescope.load_extension("media_files")
 -- telescope.load_extension("packer")
