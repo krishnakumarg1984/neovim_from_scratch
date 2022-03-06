@@ -324,6 +324,8 @@ endif
 
 set tags=~/.cache/tags
 
+let g:cursorhold_updatetime = 100
+
 ]]
 
 -- )))
