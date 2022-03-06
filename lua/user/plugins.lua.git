@@ -1,4 +1,4 @@
--- vim: foldmarker=(((,))):foldmethod=marker:foldlevelstart=0:shiftwidth=2:softtabstop=2:tabstop=2
+-- vim: ft=lua:foldmarker=(((,))):foldmethod=marker:foldlevelstart=0:shiftwidth=2:softtabstop=2:tabstop=2
 
 -- Boilerplate for packer automation (((
 
@@ -70,30 +70,16 @@ return packer.startup(function(use)
 
   -- )))
 
-  -- Treesitter & related plugins (((
+  
 
-  use {
-    "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate",
-  }
-  use {
-    "nvim-treesitter/nvim-treesitter-refactor",
-    after = { "nvim-treesitter" },
-    -- requires = { "nvim-treesitter" },
-  }
-  use {
-    "nvim-treesitter/nvim-treesitter-textobjects",
-    after = { "nvim-treesitter" },
-    -- requires = { { "nvim-treesitter" } },
-  }
-  use { "romgrk/nvim-treesitter-context", after = { "nvim-treesitter" } }
-  use { "JoosepAlviste/nvim-ts-context-commentstring", after = { "nvim-treesitter" } }
+  -- further treesitter-related plugins (((
+
   use { "numToStr/Comment.nvim" } -- Easily comment stuff
   -- use( "mizlan/iswap.nvim", requires = { { "nvim-treesitter" } } )
   -- use { "folke/zen-mode.nvim", cmd = "ZenMode" }
   -- use { "folke/twilight.nvim", cmd = { "ZenMode", "Twilight", "TwilightEnable" } }
 
-  -- -- )))
+  -- )))
 
   -- Colorscheme plugins (((
 
@@ -169,14 +155,12 @@ return packer.startup(function(use)
   --     "CCMake",
   --   },
   -- }
-  use { "jeffkreeftmeijer/vim-numbertoggle", event = "InsertEnter" }
-  use { "lervag/vimtex", ft = "tex" }
+  
   use { "ludovicchabant/vim-gutentags" } -- , event = "BufWinEnter" }
   use { "machakann/vim-sandwich", keys = { "sa", "sr", "sd" } }
-  use { "petRUShka/vim-opencl", ft = { "opencl" } }
+  -- use { "petRUShka/vim-opencl", ft = { "opencl" } }  -- note: slow plugin on remote systems
   -- use { "puremourning/vimspector", fn = "vimspector#Launch", disable = false }
-  use { "svban/YankAssassin.vim" }
-  use { "tpope/vim-repeat", event = "BufWinEnter" }
+  use { "tpope/vim-repeat", event = "BufWinEnter", after = { "vim-sandwich" } }
   use { "tyru/capture.vim", cmd = { "Capture" } }
 
   -- use { "dstein64/vim-startuptime", cmd = { "StartupTime" } }
@@ -217,9 +201,8 @@ return packer.startup(function(use)
   -- -- })
   -- use { "akinsho/bufferline.nvim" }
   -- use { "kazhala/close-buffers.nvim", cmd = {} }
-  use { "nvim-lualine/lualine.nvim" }
   use { "akinsho/toggleterm.nvim", cmd = { "ToggleTerm", "ToggleTermToggleAll", "TermExec" } }
-  use { "lukas-reineke/indent-blankline.nvim" } -- slow plugin (try and restrict to a few filetypes)
+  
   -- use { "luukvbaal/stabilize.nvim" }
   -- use { "folke/todo-comments.nvim" } -- :ToDoQuickFix, :ToDoTrouble, :ToDoTelescope,
   -- -- TODO: do this today
@@ -228,8 +211,6 @@ return packer.startup(function(use)
   -- -- PERF: perf issue here
   -- -- WARN: things don't work much
   -- -- NOTE: make a note of this
-  use { "karb94/neoscroll.nvim" }
-  use { "kevinhwang91/nvim-hlslens", keys = { "/", "?", "q/", "q?", "*", "#", "g*", "g#" } }
   -- use { "https://gitlab.com/yorickpeterse/nvim-pqf", event = { "QuickFixCmdPre", "QuickFixCmdPost" } }
   -- use { "https://gitlab.com/yorickpeterse/nvim-pqf" }
   -- use { "TimUntersberger/neogit", cmd = { "Neogit" } }
@@ -237,17 +218,11 @@ return packer.startup(function(use)
   -- use { "stevearc/dressing.nvim" }
   -- use { "chentau/marks.nvim", keys = { "m", "dm" }, cmd = { "MarksToggleSigns", "MarksListBuf", "MarksListGlobal", "MarksListAll", "MarksQFListBuf", "MarksQFListGlobal", "MarksQFListAll" } }
   use { "klen/nvim-config-local" }
-  use { "ellisonleao/glow.nvim", ft = { "md", "Rmd", "rmarkdown", "Rmarkdown" }, cmd = { "Glow", "GlowInstall" } }
-  use { "anuvyklack/pretty-fold.nvim" }
-  use { "winston0410/range-highlight.nvim", requires = "winston0410/cmd-parser.nvim" }
   use { "Shatur/neovim-cmake", ft = { "c", "cpp", "cmake", "fortran" }, requires = { "mfussenegger/nvim-dap" } }
 
-  --
-  -- -- )))
+  -- )))
 
   -- Autocompletion and snippets support (((
-
-  -- cmp plugins (((
 
   use { "L3MON4D3/LuaSnip" } -- , event = "InsertEnter" } -- snippet engine
   use { "hrsh7th/nvim-cmp" } -- The completion plugin
@@ -278,81 +253,20 @@ return packer.startup(function(use)
 
   -- )))
 
-  -- )))
-
   -- LSP (((
 
   -- , ft = { "ansible", "awk", "bash", "sh", "c", "cpp", "cmake", "dockerfile", "fortran", "go", "java", "json", "julia", "tex", "text", "txt", "lua", "perl", "powershell", "puppet", "python", "r", "ruby", "rust", "sql", "viml", "yaml", "javascript", "typescript", "mail", "md", "markdown" }
   use { "neovim/nvim-lspconfig" } -- enable LSP
   use { "williamboman/nvim-lsp-installer" } -- simple to use language server installer
-  use { "folke/trouble.nvim" }
-  use { "https://gitlab.com/yorickpeterse/nvim-dd" }
   use { "jose-elias-alvarez/null-ls.nvim" } -- for formatters and linters
-  -- use { "kosayoda/nvim-lightbulb" }
   use { "ray-x/lsp_signature.nvim", requires = "kyazdani42/nvim-web-devicons" } -- event = { "InsertEnter" }, }
-  use { "rmagatti/goto-preview" }
-  use { "stevearc/aerial.nvim" }
   use { "tami5/lspsaga.nvim" } -- , event = "InsertEnter" })
-  -- use { "ldelossa/litee-calltree.nvim", requires = { "ldelossa/litee.nvim" } }
-
-  -- )))
-
-  -- Telescope (((
-
-  use "nvim-telescope/telescope.nvim"
-  -- use("nvim-telescope/telescope-media-files.nvim")
-  -- use("nvim-telescope/telescope-packer.nvim")
-  -- cheatsheet.nvim (((
-  use {
-    "sudormrfbin/cheatsheet.nvim",
-    requires = {
-      { "nvim-telescope/telescope.nvim" },
-      { "nvim-lua/popup.nvim" },
-      { "nvim-lua/plenary.nvim" },
-    },
-    cmd = { "Cheatsheet", "CheatsheetEdit" },
-  }
-  -- )))
-  -- octo.nvim ((( -- or  nvim-telescope / telescope-github.nvim
-  use {
-    "pwntester/octo.nvim",
-    requires = {
-      "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope.nvim",
-      "kyazdani42/nvim-web-devicons",
-    },
-    cmd = { "Octo" },
-  }
-  -- )))
-  -- telescope-fzf-native (((
-  use {
-    "nvim-telescope/telescope-fzf-native.nvim",
-    run = "make",
-    requires = { { "nvim-telescope/telescope.nvim" }, { "nvim-lua/plenary.nvim" } },
-  }
-  -- )))
-  -- use {
-  --   "crispgm/telescope-heading.nvim",
-  --   requires = { { "nvim-telescope/telescope.nvim" }, { "nvim-lua/plenary.nvim" } },
-  -- }
-  -- use "nvim-telescope/telescope-symbols.nvim"
-  -- use({
-  --   "nvim-telescope/telescope-frecency.nvim",
-  --   requires = { "tami5/sqlite.lua" },
-  -- })
-  -- use("sQVe/sort.nvim")
-
-  -- )))
-
-  -- Git (((
-
-  use "lewis6991/gitsigns.nvim"
+  -- use { "kosayoda/nvim-lightbulb" }
+  
 
   -- )))
 
   use { "folke/which-key.nvim" }
-
-  -- )))
 
   -- use { "lewis6991/impatient.nvim" }  --  https://github.com/lewis6991/impatient.nvim/issues/20 (needs treesitter)
 
